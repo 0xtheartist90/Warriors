@@ -53,14 +53,15 @@ const Page = () => {
                 <span aria-hidden className='bg-word'>
                     Missie
                 </span>
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
-                        Een nieuwe manier van <span className='text-gold'>bewegen /</span>
+                <div className='relative z-10 mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-10 px-6 lg:px-10'>
+                    <h1 className='display anim-rise mt-5 text-[clamp(3rem,8vw,6.5rem)] text-white [animation-delay:120ms]'>
+                        <span className='block'>Een nieuwe manier</span>
+                        <span className='text-outline block'>
+                            van bewegen <span className='text-gold'>/</span>
+                        </span>
                     </h1>
-                    <p className='anim-rise mt-6 max-w-2xl leading-relaxed text-white/70 [animation-delay:240ms]'>
-                        Wij zijn een sportvereniging voor en door jongeren, waar leden hun ideeën kunnen realiseren.
-                        Naast sport draait het bij ons om de normen en waarden die je buiten het spel nodig hebt:
-                        punctualiteit, samenwerken, geduld en natuurlijk plezier!
+                    <p className='display anim-rise max-w-64 pb-3 text-xs leading-relaxed tracking-[0.15em] text-white/60 [animation-delay:240ms]'>
+                        Voor en door jongeren. Punctualiteit, samenwerken, geduld en plezier.
                     </p>
                 </div>
             </section>
@@ -71,15 +72,15 @@ const Page = () => {
                     <Reveal>
                         <p className='eyebrow'>Onze reis</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            Van idee tot <span className='text-gold'>familie</span>
+                            Van idee tot <span className='text-gold'>familie /</span>
                         </h2>
                     </Reveal>
-                    <div className='mt-14 grid gap-6 lg:grid-cols-3'>
+                    <div className='border-hairline mt-14 grid border-t lg:grid-cols-3 lg:divide-x lg:divide-[var(--hairline)]'>
                         {reis.map((stap, index) => (
                             <Reveal key={stap.jaar} delay={index * 120}>
-                                <article className='bg-navy-card border-hairline hover:border-gold/40 flex h-full flex-col border p-9 transition-colors duration-500'>
-                                    <span className='display text-outline text-6xl'>{stap.jaar}</span>
-                                    <h3 className='display mt-5 text-2xl text-white'>{stap.titel}</h3>
+                                <article className='flex h-full flex-col py-10 max-lg:border-b max-lg:border-[var(--hairline)] lg:px-10 lg:first:pl-0 lg:last:pr-0'>
+                                    <span className='display text-outline text-7xl'>{stap.jaar}</span>
+                                    <h3 className='display mt-6 text-2xl text-white'>{stap.titel}</h3>
                                     <p className='mt-4 text-sm leading-relaxed text-white/65'>{stap.tekst}</p>
                                 </article>
                             </Reveal>
@@ -107,7 +108,7 @@ const Page = () => {
                     <Reveal delay={150}>
                         <p className='eyebrow'>Samenwerking</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            Warriors × <span className='text-gold'>Hedy Tjin</span>
+                            Warriors × <span className='text-gold'>Hedy Tjin /</span>
                         </h2>
                         <p className='mt-6 leading-relaxed text-white/70'>
                             It takes a village to raise a child. Vanuit dat motto werken we samen met partners aan
@@ -137,7 +138,7 @@ const Page = () => {
                         <Reveal>
                             <p className='eyebrow'>Werken bij ons</p>
                             <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                                Bouw mee aan <span className='text-gold'>Zuidoost</span>
+                                Bouw mee aan <span className='text-gold'>Zuidoost /</span>
                             </h2>
                             <p className='mt-6 leading-relaxed text-white/70'>
                                 Ben je op zoek naar een stageplek? Wij zijn een erkend stagebedrijf! Daarnaast zoeken

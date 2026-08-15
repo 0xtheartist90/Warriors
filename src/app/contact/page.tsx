@@ -33,21 +33,30 @@ const Page = () => {
                 <span aria-hidden className='bg-word'>
                     Contact
                 </span>
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
-                        We horen graag <span className='text-gold'>van je /</span>
-                    </h1>
-                    <p className='anim-rise mt-6 max-w-2xl leading-relaxed text-white/70 [animation-delay:240ms]'>
-                        Bel of app ons doordeweeks tussen 10:00 en 18:00, of stuur een e-mail. Met een gerichte vraag
-                        mail je direct met de juiste persoon.
-                    </p>
-                    <div className='anim-rise mt-10 flex flex-wrap gap-4 [animation-delay:360ms]'>
-                        <Magnetic>
-                            <GoldButton href={contact.telefoonHref} external>
-                                Bel {contact.telefoon}
-                            </GoldButton>
-                        </Magnetic>
+                <div className='relative z-10 mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-10 px-6 lg:px-10'>
+                    <div>
+                        <h1 className='display anim-rise mt-5 text-[clamp(3rem,8vw,6.5rem)] text-white [animation-delay:120ms]'>
+                            <span className='block'>We horen graag</span>
+                            <span className='text-outline block'>
+                                van je <span className='text-gold'>/</span>
+                            </span>
+                        </h1>
+                        <div className='anim-rise mt-10 flex flex-wrap items-center gap-8 [animation-delay:360ms]'>
+                            <Magnetic>
+                                <GoldButton href={contact.telefoonHref} external>
+                                    Bel {contact.telefoon}
+                                </GoldButton>
+                            </Magnetic>
+                            <a
+                                href={`mailto:${contact.email}`}
+                                className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                                [&nbsp;&nbsp;Mail ons&nbsp;&nbsp;]
+                            </a>
+                        </div>
                     </div>
+                    <p className='display anim-rise max-w-64 pb-3 text-xs leading-relaxed tracking-[0.15em] text-white/60 [animation-delay:240ms]'>
+                        Doordeweeks bereikbaar van 10:00 tot 18:00, ook via WhatsApp.
+                    </p>
                 </div>
             </section>
 
@@ -57,23 +66,23 @@ const Page = () => {
                     <Reveal>
                         <p className='eyebrow'>Meest gestelde vragen</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            Mail direct met de <span className='text-gold'>juiste persoon</span>
+                            Mail direct met de <span className='text-gold'>juiste persoon /</span>
                         </h2>
                     </Reveal>
-                    <div className='mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+                    <div className='border-hairline mt-12 grid border-t sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-[var(--hairline)]'>
                         {mailadressen.map((item, index) => (
-                            <Reveal key={item.onderwerp} delay={index * 100}>
+                            <Reveal key={item.onderwerp} delay={index * 100} className='h-full'>
                                 <a
                                     href={`mailto:${item.email}`}
-                                    className='bg-navy-card border-hairline hover:border-gold/40 group flex h-full flex-col border p-8 transition-colors duration-500'>
-                                    <div className='flex items-center gap-3'>
-                                        <Mail className='text-gold size-5 shrink-0' />
-                                        <h3 className='display text-xl text-white'>{item.onderwerp}</h3>
-                                    </div>
-                                    <p className='mt-2 flex-1 text-sm leading-relaxed text-white/60'>
+                                    className='group flex h-full flex-col py-9 max-lg:border-b max-lg:border-[var(--hairline)] lg:px-8 lg:first:pl-0 lg:last:pr-0'>
+                                    <span className='display text-outline text-4xl'>
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <h3 className='display mt-5 text-xl text-white'>{item.onderwerp}</h3>
+                                    <p className='mt-3 flex-1 text-sm leading-relaxed text-white/60'>
                                         {item.toelichting}
                                     </p>
-                                    <span className='text-gold mt-5 text-sm break-all group-hover:underline'>
+                                    <span className='text-gold mt-6 text-sm break-all group-hover:underline'>
                                         {item.email}
                                     </span>
                                 </a>

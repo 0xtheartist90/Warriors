@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const programmas = [
     {
         id: 'basketbalschool',
-        stap: 'Stap 1 · 4 tot 10 jaar',
+        stap: '4 tot 10 jaar',
         title: 'Basketbalschool',
         image: media.basketbalschool,
         tekst: 'Onze wekelijkse zaterdagochtendactiviteit voor kinderen van 4 tot 10 jaar. Een uur lang kennismaken met basketbal: dribbelen, passen, vangen en schieten, afgesloten met leuke oefenvormen. Het doel is kinderen enthousiast maken voor de sport, met doorstroming naar het recreatieve of competitieve programma.',
@@ -28,7 +28,7 @@ const programmas = [
     },
     {
         id: 'regio',
-        stap: 'Stap 2 · 12 tot 18 jaar',
+        stap: '12 tot 18 jaar',
         title: 'Regio',
         image: media.girls,
         tekst: 'Sporten op fietsafstand, loopafstand of binnen 15 minuten met het openbaar vervoer. Twee trainingsmomenten per week in het Bijlmersportcentrum of de gymzaal van de OSB, verzorgd door Warriors-trainers. Het Regio programma biedt structuur, een veilige leeromgeving en individuele ontwikkeling, met lokale competities.',
@@ -37,7 +37,7 @@ const programmas = [
     },
     {
         id: 'excellence',
-        stap: 'Stap 3 · Selectie',
+        stap: 'Selectie, U12 tot U22',
         title: 'Excellence',
         image: media.proefles,
         tekst: 'Ons selectieve programma voor getalenteerde spelers die uitkomen in de NBB competitie. Excellence vraagt begrip van trainingsintensiteit, een serieuze opleiding en teamverantwoordelijkheid. Onze filosofie: it takes a village to raise a child. We bouwen aan een professioneel netwerk van voedingsdeskundigen, docenten, coaches en scholen rond elke speler.',
@@ -70,15 +70,15 @@ const Page = () => {
                 <span aria-hidden className='bg-word'>
                     Aanbod
                 </span>
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
-                        Eén <span className='text-gold'>doorgroeipad</span>, voor elke leeftijd{' '}
-                        <span className='text-gold'>/</span>
+                <div className='relative z-10 mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-10 px-6 lg:px-10'>
+                    <h1 className='display anim-rise mt-5 text-[clamp(3rem,8vw,6.5rem)] text-white [animation-delay:120ms]'>
+                        <span className='block'>Eén doorgroeipad</span>
+                        <span className='text-outline block'>
+                            voor elke leeftijd <span className='text-gold'>/</span>
+                        </span>
                     </h1>
-                    <p className='anim-rise mt-6 max-w-2xl leading-relaxed text-white/70 [animation-delay:240ms]'>
-                        Bij de Warriors groei je stap voor stap: kennismaken bij de Basketbalschool, ontwikkelen in het
-                        Regio programma en excelleren in de NBB competitie met Excellence. Seizoen van september tot en
-                        met mei.
+                    <p className='display anim-rise max-w-64 pb-3 text-xs leading-relaxed tracking-[0.15em] text-white/60 [animation-delay:240ms]'>
+                        Kennismaken, ontwikkelen, excelleren. Seizoen van september tot en met mei.
                     </p>
                 </div>
             </section>
@@ -103,15 +103,18 @@ const Page = () => {
                             </div>
                         </Reveal>
                         <Reveal delay={150}>
-                            <p className='eyebrow'>{programma.stap}</p>
-                            <h2 className='display mt-4 text-4xl text-white lg:text-5xl'>{programma.title}</h2>
+                            <p className='display text-xs tracking-[0.25em] text-white/50'>{programma.stap}</p>
+                            <h2 className='display mt-4 text-5xl text-white lg:text-6xl'>
+                                <span className='text-gold'>{String(index + 1).padStart(2, '0')}.</span>{' '}
+                                {programma.title}
+                            </h2>
                             <p className='mt-6 leading-relaxed text-white/70'>{programma.tekst}</p>
-                            <ul className='mt-8 space-y-3.5'>
+                            <ul className='border-hairline mt-9 border-t'>
                                 {programma.punten.map((punt) => (
-                                    <li key={punt} className='flex items-start gap-3 text-sm text-white/75'>
-                                        <span className='bg-gold text-navy mt-0.5 flex size-5 shrink-0 items-center justify-center'>
-                                            <Check className='size-3.5' strokeWidth={3} />
-                                        </span>
+                                    <li
+                                        key={punt}
+                                        className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm text-white/75'>
+                                        <span className='display text-gold shrink-0'>/</span>
                                         {punt}
                                     </li>
                                 ))}
@@ -134,13 +137,15 @@ const Page = () => {
                     <Reveal>
                         <p className='eyebrow'>Meer dan basketbal</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            Andere <span className='text-gold'>sporten</span>
+                            Andere <span className='text-gold'>sporten /</span>
                         </h2>
                     </Reveal>
                     <div className='mt-12 grid gap-6 md:grid-cols-2'>
                         <Reveal>
                             <article className='bg-navy-card border-hairline hover:border-gold/40 flex h-full flex-col border p-9 transition-colors duration-500'>
-                                <h3 className='display text-2xl text-white'>Voetbal</h3>
+                                <h3 className='display text-3xl text-white'>
+                                    <span className='text-gold'>04.</span> Voetbal
+                                </h3>
                                 <p className='mt-4 flex-1 text-sm leading-relaxed text-white/65'>
                                     In samenwerking met de nieuwe voetbalvereniging Amstel City organiseren we samen de
                                     voetbaltak. Onze leden trainen en spelen wedstrijden op het Bijlmer Sportpark,
@@ -159,7 +164,9 @@ const Page = () => {
                         </Reveal>
                         <Reveal delay={120}>
                             <article className='bg-navy-card border-hairline hover:border-gold/40 flex h-full flex-col border p-9 transition-colors duration-500'>
-                                <h3 className='display text-2xl text-white'>Baseball 5</h3>
+                                <h3 className='display text-3xl text-white'>
+                                    <span className='text-gold'>05.</span> Baseball 5
+                                </h3>
                                 <p className='mt-4 flex-1 text-sm leading-relaxed text-white/65'>
                                     Baseball 5 is een snelle variant op honkbal, gespeeld met vijf spelers per team en
                                     voornamelijk binnen in de zaal. De nadruk ligt op spelinzicht, coördinatie en
@@ -187,7 +194,7 @@ const Page = () => {
                         <Reveal>
                             <p className='eyebrow'>Evenement</p>
                             <h2 className='display mt-4 text-4xl text-white lg:text-5xl'>
-                                Scholentoernooi <span className='text-gold'>2026</span>
+                                Scholentoernooi <span className='text-gold'>2026 /</span>
                             </h2>
                             <p className='mt-6 leading-relaxed text-white/70'>
                                 Hét basketbaltoernooi voor kinderen van 6 tot 12 jaar. Doe mee met je schoolteam of
@@ -231,7 +238,7 @@ const Page = () => {
                     <Reveal>
                         <p className='eyebrow'>Seizoen september t/m mei</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            <span className='text-gold'>Contributie</span> per programma
+                            <span className='text-gold'>Contributie</span> per programma <span className='text-gold'>/</span>
                         </h2>
                     </Reveal>
                     <div className='mt-12 grid gap-16 lg:grid-cols-[1.2fr_1fr]'>
