@@ -6,6 +6,8 @@ import localFont from 'next/font/local';
 
 import '@/app/globals.css';
 import IntroCurtain from '@/components/site/intro-curtain';
+import SiteFooter from '@/components/site/site-footer';
+import SiteHeader from '@/components/site/site-header';
 import SmoothScroll from '@/components/site/smooth-scroll';
 
 const geistSans = localFont({
@@ -30,7 +32,11 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='nl' className='dark'>
             <body
                 className={`${geistSans.variable} ${oswald.variable} bg-navy text-foreground overscroll-none font-sans antialiased`}>
-                <SmoothScroll>{children}</SmoothScroll>
+                <SmoothScroll>
+                    <SiteHeader />
+                    {children}
+                    <SiteFooter />
+                </SmoothScroll>
                 <div aria-hidden className='grain' />
                 <IntroCurtain />
             </body>

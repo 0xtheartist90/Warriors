@@ -4,22 +4,9 @@ import Link from 'next/link';
 import Magnetic from '@/components/site/magnetic';
 import Parallax from '@/components/site/parallax';
 import Reveal from '@/components/site/reveal';
-import SiteHeader from '@/components/site/site-header';
 import StatCounter from '@/components/site/stat-counter';
 
-import {
-    ArrowRight,
-    Calendar,
-    Check,
-    Clock,
-    Facebook,
-    Instagram,
-    Linkedin,
-    Mail,
-    MapPin,
-    Phone,
-    Youtube
-} from 'lucide-react';
+import { ArrowRight, Calendar, Check, Clock, MapPin } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
 /*  Content, afkomstig van amsterdamwarriors.com                       */
@@ -59,13 +46,6 @@ const links = {
     potjescheck: 'https://potjescheck.geldfit.nl/'
 };
 
-const socials = [
-    { label: 'Instagram', href: 'https://www.instagram.com/amsterdamwarriors.stichting/', Icon: Instagram },
-    { label: 'Facebook', href: 'https://www.facebook.com/bcamsterdamwarriors/', Icon: Facebook },
-    { label: 'LinkedIn', href: 'https://nl.linkedin.com/company/bc-gaasperdam-warriors', Icon: Linkedin },
-    { label: 'YouTube', href: 'https://www.youtube.com/channel/UCuJfCbpo4mLnbG-q4jxUrSA', Icon: Youtube }
-];
-
 const stats = [
     { value: 2014, suffix: '', label: 'Opgericht in Zuidoost' },
     { value: 4, suffix: '+', label: 'Basketbal vanaf 4 jaar' },
@@ -75,14 +55,17 @@ const stats = [
 
 const programmas = [
     {
+        id: 'basketbalschool',
         title: 'Basketbalschool',
         text: 'De kennismaking met basketbal voor kinderen vanaf 4 tot 10 jaar. Hier laten we kinderen ervaren hoe leuk de sport kan zijn en stomen wij ze klaar om deel te kunnen nemen aan het Regio of Excellence programma.'
     },
     {
+        id: 'regio',
         title: 'Regio',
         text: 'Vanaf 11 jaar maak je kennis met basketbal in ons Regio programma. Een dynamische sport met techniek, inspanning en vooral veel plezier!'
     },
     {
+        id: 'excellence',
         title: 'Excellence',
         text: 'Wij excelleren ons talent in de NBB competitie middels ons Excellence programma. De sport waar de Warriors in 2014 mee zijn gestart, en wij groeien steeds meer tot een grotere familie.'
     }
@@ -135,9 +118,6 @@ const GhostButton = ({ href, children, external }: { href: string; children: Rea
 const Page = () => {
     return (
         <main className='overflow-x-clip'>
-            {/* ---------------- Header ---------------- */}
-            <SiteHeader />
-
             {/* ---------------- Hero ---------------- */}
             <section className='relative flex min-h-svh items-center overflow-hidden pt-20'>
                 <video
@@ -171,12 +151,10 @@ const Page = () => {
                     </h1>
                     <div className='anim-rise mt-12 flex flex-wrap justify-center gap-4 [animation-delay:520ms]'>
                         <Magnetic>
-                            <GoldButton href={links.proefles} external>
-                                Proefles aanvragen
-                            </GoldButton>
+                            <GoldButton href='/word-lid'>Word lid</GoldButton>
                         </Magnetic>
                         <Magnetic>
-                            <GhostButton href='#over'>Meer over ons</GhostButton>
+                            <GhostButton href='/aanbod'>Ons aanbod</GhostButton>
                         </Magnetic>
                     </div>
                 </div>
@@ -257,12 +235,11 @@ const Page = () => {
                                 )
                             )}
                         </ul>
-                        <div className='mt-11'>
+                        <div className='mt-11 flex flex-wrap gap-4'>
                             <Magnetic>
-                                <GoldButton href={links.proefles} external>
-                                    Meld je aan
-                                </GoldButton>
+                                <GoldButton href='/word-lid'>Word lid</GoldButton>
                             </Magnetic>
+                            <GhostButton href='/over'>Onze missie</GhostButton>
                         </div>
                     </Reveal>
                 </div>
@@ -326,9 +303,7 @@ const Page = () => {
                                             {programma.text}
                                         </p>
                                         <Link
-                                            href={links.proefles}
-                                            target='_blank'
-                                            rel='noreferrer noopener'
+                                            href={`/aanbod#${programma.id}`}
                                             className='display text-gold group/link mt-7 inline-flex items-center gap-2 text-sm tracking-[0.2em]'>
                                             Meer lezen
                                             <ArrowRight className='size-4 transition-transform duration-300 group-hover/link:translate-x-1' />
@@ -490,14 +465,12 @@ const Page = () => {
                                     , en daarmee <strong className='text-white'>€300 op je contributie</strong> kan
                                     besparen?
                                 </p>
-                                <a
-                                    href={links.leergeld}
-                                    target='_blank'
-                                    rel='noreferrer noopener'
+                                <Link
+                                    href='/aanbod#contributie'
                                     className='display text-gold group/link mt-7 inline-flex items-center gap-2 text-sm tracking-[0.2em]'>
-                                    Meer informatie
+                                    Bekijk alle tarieven
                                     <ArrowRight className='size-4 transition-transform duration-300 group-hover/link:translate-x-1' />
-                                </a>
+                                </Link>
                                 <div className='border-hairline mt-9 border-t pt-6'>
                                     <p className='display text-sm tracking-[0.2em] text-white/45'>#WijWerkenMetNIKKI</p>
                                 </div>
@@ -575,124 +548,6 @@ const Page = () => {
                     </Reveal>
                 </div>
             </section>
-
-            {/* ---------------- Footer ---------------- */}
-            <footer id='contact' className='border-hairline scroll-mt-24 border-t'>
-                <div className='mx-auto grid max-w-[1280px] gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-4 lg:px-10'>
-                    <div>
-                        <div className='flex items-center gap-3'>
-                            <Image src={media.logo} alt='Amsterdam Warriors logo' width={56} height={45} />
-                            <span className='display text-lg text-white'>
-                                Amsterdam <span className='text-gold'>Warriors</span>
-                            </span>
-                        </div>
-                        <ul className='mt-7 space-y-3.5 text-sm text-white/65'>
-                            <li className='flex items-center gap-3'>
-                                <Mail className='text-gold size-4 shrink-0' />
-                                <a
-                                    className='hover:text-gold transition-colors duration-300'
-                                    href='mailto:info@amsterdamwarriors.com'>
-                                    info@amsterdamwarriors.com
-                                </a>
-                            </li>
-                            <li className='flex items-center gap-3'>
-                                <Phone className='text-gold size-4 shrink-0' />
-                                <a className='hover:text-gold transition-colors duration-300' href='tel:+31611210422'>
-                                    +31 6 11 21 04 22
-                                </a>
-                            </li>
-                            <li className='flex items-center gap-3'>
-                                <MapPin className='text-gold size-4 shrink-0' />
-                                Hoogoorddreef, Amsterdam
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className='display text-gold text-sm tracking-[0.2em]'>Aanbod</h3>
-                        <ul className='mt-6 space-y-3.5 text-sm text-white/65'>
-                            {['Basketbalschool', 'Regio', 'Excellence', 'Scholentoernooi 2026'].map((item) => (
-                                <li key={item}>
-                                    <Link className='hover:text-gold transition-colors duration-300' href='#aanbod'>
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className='display text-gold text-sm tracking-[0.2em]'>Nuttige links</h3>
-                        <ul className='mt-6 space-y-3.5 text-sm text-white/65'>
-                            <li>
-                                <a
-                                    className='hover:text-gold transition-colors duration-300'
-                                    href={links.gedragscode}
-                                    target='_blank'
-                                    rel='noreferrer noopener'>
-                                    Gedragscode
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='hover:text-gold transition-colors duration-300'
-                                    href={links.beleidsplan}
-                                    target='_blank'
-                                    rel='noreferrer noopener'>
-                                    Beleidsplan
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='hover:text-gold transition-colors duration-300'
-                                    href={links.proefles}
-                                    target='_blank'
-                                    rel='noreferrer noopener'>
-                                    Word lid
-                                </a>
-                            </li>
-                        </ul>
-                        <div className='mt-7 text-sm text-white/60'>
-                            <p className='display text-xs tracking-[0.2em] text-white/45'>Vertrouwenspersoon</p>
-                            <p className='mt-2'>
-                                Wilt u iets melden?{' '}
-                                <a className='text-gold hover:underline' href='mailto:meldpunt@basketball.nl'>
-                                    meldpunt@basketball.nl
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 className='display text-gold text-sm tracking-[0.2em]'>Volg ons</h3>
-                        <div className='mt-6 flex gap-3'>
-                            {socials.map(({ label, href, Icon }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    target='_blank'
-                                    rel='noreferrer noopener'
-                                    aria-label={label}
-                                    className='border-gold/30 text-gold hover:bg-gold hover:text-navy flex size-11 items-center justify-center border transition-colors duration-300'>
-                                    <Icon className='size-4' />
-                                </a>
-                            ))}
-                        </div>
-                        <div className='mt-9'>
-                            <Magnetic>
-                                <GoldButton href={links.proefles} external>
-                                    Word lid
-                                </GoldButton>
-                            </Magnetic>
-                        </div>
-                    </div>
-                </div>
-                <div className='border-hairline border-t'>
-                    <p className='mx-auto max-w-[1280px] px-6 py-6 text-center text-xs tracking-wide text-white/45'>
-                        © 2026 Amsterdam Warriors · Work hard, play hard
-                    </p>
-                </div>
-            </footer>
         </main>
     );
 };
