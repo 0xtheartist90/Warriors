@@ -307,6 +307,55 @@ html.lenis body {
   background-size: 240px 240px;
 }
 
+/* trage cinematic zoom op de hero-video */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-video {
+  animation: hero-zoom 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* scroll-indicator onderaan de hero */
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.scroll-cue {
+  width: 1px;
+  height: 3.5rem;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scroll-cue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video,
+  .scroll-cue {
+    animation: none;
+  }
+}
+
 /* zachte gouden gloed achter de hero-kop */
 .hero-glow {
   position: absolute;

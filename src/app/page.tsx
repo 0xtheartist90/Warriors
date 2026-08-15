@@ -141,7 +141,7 @@ const Page = () => {
             {/* ---------------- Hero ---------------- */}
             <section className='relative flex min-h-svh items-center overflow-hidden pt-20'>
                 <video
-                    className='absolute inset-0 h-full w-full object-cover'
+                    className='hero-video absolute inset-0 h-full w-full object-cover'
                     src={media.heroVideo}
                     poster={media.heroPoster}
                     autoPlay
@@ -150,6 +150,8 @@ const Page = () => {
                     playsInline
                 />
                 <div className='bg-navy/70 absolute inset-0' />
+                {/* vignet: donkere randen voor cinematische focus op het midden */}
+                <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
                 <div aria-hidden className='hero-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' />
 
@@ -157,10 +159,10 @@ const Page = () => {
                     <Image
                         src={media.logo}
                         alt='Amsterdam Warriors logo'
-                        width={160}
-                        height={129}
+                        width={240}
+                        height={192}
                         priority
-                        className='anim-rise'
+                        className='anim-rise drop-shadow-[0_0_35px_rgba(239,168,45,0.25)]'
                     />
                     <p className='eyebrow anim-rise mt-8 [animation-delay:120ms]'>Basketbalclub Amsterdam Zuidoost</p>
                     <h1 className='display mt-6 text-[clamp(3rem,8vw,6.5rem)] text-white'>
@@ -178,6 +180,14 @@ const Page = () => {
                         </Magnetic>
                     </div>
                 </div>
+
+                {/* scroll-indicator */}
+                <Link
+                    href='#over'
+                    aria-label='Scroll naar Over ons'
+                    className='anim-rise absolute bottom-8 left-1/2 z-10 -translate-x-1/2 [animation-delay:900ms]'>
+                    <span className='scroll-cue block' />
+                </Link>
             </section>
 
             {/* ---------------- Stats ---------------- */}
