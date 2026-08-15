@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Magnetic from '@/components/site/magnetic';
+import Parallax from '@/components/site/parallax';
 import Reveal from '@/components/site/reveal';
+import SiteHeader from '@/components/site/site-header';
+import StatCounter from '@/components/site/stat-counter';
 
 import {
     ArrowRight,
@@ -31,8 +35,18 @@ const media = {
     girls: `${WIX}/c5b4b1_e2daa68c5aa24763958a18f35a623f1d~mv2.jpg`,
     basketbalschool: `${WIX}/c5b4b1_b21cadd0fae94e2bb93e810745093c79~mv2.jpg`,
     proefles: `${WIX}/c5b4b1_88e5f3ebbfb34adc905f90d4e1b1c648~mv2.jpg`,
-    nieuws: `${WIX}/c5b4b1_688e0356f66447cf8bd4e75c3638a7b4~mv2.png`
+    nieuws: '/images/nieuws.jpg'
 };
+
+/* foto's uit /public/images/Marquee voor de doorlopende fotostrook */
+const marqueePhotos = [
+    '/images/Marquee/Warriors.jpg',
+    '/images/Marquee/Warriors3.jpg',
+    '/images/Marquee/Warriors4.jpg',
+    '/images/Marquee/Warriors5.jpg',
+    '/images/Marquee/Warriors6.jpg',
+    '/images/Marquee/Warriors7.jpg'
+];
 
 const links = {
     proefles: 'https://forms.wix.com/f/7122204151047521203',
@@ -52,20 +66,11 @@ const socials = [
     { label: 'YouTube', href: 'https://www.youtube.com/channel/UCuJfCbpo4mLnbG-q4jxUrSA', Icon: Youtube }
 ];
 
-const navItems = [
-    { label: 'Over ons', href: '#over' },
-    { label: 'Aanbod', href: '#aanbod' },
-    { label: 'Nieuws', href: '#nieuws' },
-    { label: 'Contributie', href: '#contributie' },
-    { label: 'Partners', href: '#partners' },
-    { label: 'Contact', href: '#contact' }
-];
-
 const stats = [
-    { value: '2014', label: 'Opgericht in Zuidoost' },
-    { value: '4+', label: 'Basketbal vanaf 4 jaar' },
-    { value: '3', label: "Programma's voor elk niveau" },
-    { value: '12', label: 'Partners in de wijk' }
+    { value: 2014, suffix: '', label: 'Opgericht in Zuidoost' },
+    { value: 4, suffix: '+', label: 'Basketbal vanaf 4 jaar' },
+    { value: 3, suffix: '', label: "Programma's voor elk niveau" },
+    { value: 12, suffix: '', label: 'Partners in de wijk' }
 ];
 
 const programmas = [
@@ -131,33 +136,7 @@ const Page = () => {
     return (
         <main className='overflow-x-clip'>
             {/* ---------------- Header ---------------- */}
-            <header className='border-hairline bg-navy/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md'>
-                <div className='mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10'>
-                    <Link href='#' className='flex items-center gap-3'>
-                        <Image src={media.logo} alt='Amsterdam Warriors logo' width={52} height={42} />
-                        <span className='display text-lg text-white'>
-                            Amsterdam <span className='text-gold'>Warriors</span>
-                        </span>
-                    </Link>
-                    <nav className='hidden items-center gap-9 lg:flex'>
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.label}
-                                href={item.href}
-                                className='display hover:text-gold text-[13px] tracking-[0.18em] text-white/75 transition-colors duration-300'>
-                                {item.label}
-                            </Link>
-                        ))}
-                    </nav>
-                    <Link
-                        href={links.proefles}
-                        target='_blank'
-                        rel='noreferrer noopener'
-                        className='display bg-gold text-navy hover:bg-gold-dark px-6 py-3 text-[13px] tracking-[0.18em] transition-colors duration-300'>
-                        Word lid
-                    </Link>
-                </div>
-            </header>
+            <SiteHeader />
 
             {/* ---------------- Hero ---------------- */}
             <section className='relative flex min-h-svh items-center overflow-hidden pt-20'>
@@ -170,32 +149,33 @@ const Page = () => {
                     loop
                     playsInline
                 />
-                <div className='from-navy via-navy/80 absolute inset-0 bg-gradient-to-r to-transparent' />
+                <div className='bg-navy/70 absolute inset-0' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
-                <div aria-hidden className='hero-glow top-[-15%] left-[-10%]' />
-                {/* gouden decoratieve blokken */}
-                <div aria-hidden className='bg-gold anim-rise absolute top-32 right-10 hidden size-24 [animation-delay:600ms] lg:block' />
-                <div
-                    aria-hidden
-                    className='border-gold anim-rise absolute right-24 bottom-24 hidden size-40 border-4 [animation-delay:750ms] lg:block'
-                />
+                <div aria-hidden className='hero-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' />
 
-                <div className='relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 lg:px-10'>
-                    <p className='eyebrow anim-rise'>Basketbalclub Amsterdam Zuidoost</p>
-                    <h1 className='display mt-6 max-w-3xl text-[clamp(3rem,8vw,6rem)] text-white'>
-                        <span className='anim-rise block [animation-delay:120ms]'>Work hard</span>
-                        <span className='anim-rise text-outline block [animation-delay:260ms]'>play hard</span>
+                <div className='relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center px-6 py-24 text-center lg:px-10'>
+                    <Image
+                        src={media.logo}
+                        alt='Amsterdam Warriors logo'
+                        width={160}
+                        height={129}
+                        priority
+                        className='anim-rise'
+                    />
+                    <p className='eyebrow anim-rise mt-8 [animation-delay:120ms]'>Basketbalclub Amsterdam Zuidoost</p>
+                    <h1 className='display mt-6 text-[clamp(3rem,8vw,6.5rem)] text-white'>
+                        <span className='anim-rise block [animation-delay:240ms]'>Work hard</span>
+                        <span className='anim-rise text-outline block [animation-delay:380ms]'>play hard</span>
                     </h1>
-                    <p className='anim-rise mt-7 max-w-xl text-lg leading-relaxed text-white/75 [animation-delay:400ms]'>
-                        Sporten in een veilige omgeving doe je bij de Amsterdam Warriors! We zijn een sportclub voor
-                        iedereen. Samenwerken en plezier maken staan bij ons hoog in het vaandel. Kom jij een proefles
-                        volgen, of weet je al zeker dat je bij ons wilt aansluiten?
-                    </p>
-                    <div className='anim-rise mt-11 flex flex-wrap gap-4 [animation-delay:540ms]'>
-                        <GoldButton href={links.proefles} external>
-                            Proefles aanvragen
-                        </GoldButton>
-                        <GhostButton href='#over'>Meer over ons</GhostButton>
+                    <div className='anim-rise mt-12 flex flex-wrap justify-center gap-4 [animation-delay:520ms]'>
+                        <Magnetic>
+                            <GoldButton href={links.proefles} external>
+                                Proefles aanvragen
+                            </GoldButton>
+                        </Magnetic>
+                        <Magnetic>
+                            <GhostButton href='#over'>Meer over ons</GhostButton>
+                        </Magnetic>
                     </div>
                 </div>
             </section>
@@ -206,7 +186,9 @@ const Page = () => {
                     {stats.map((stat, index) => (
                         <Reveal key={stat.label} delay={index * 100}>
                             <div className='flex items-baseline gap-4'>
-                                <span className='display text-gold text-5xl'>{stat.value}</span>
+                                <span className='display text-gold text-5xl'>
+                                    <StatCounter value={stat.value} suffix={stat.suffix} />
+                                </span>
                                 <span className='display max-w-28 text-sm leading-tight text-white/60'>
                                     {stat.label}
                                 </span>
@@ -217,22 +199,27 @@ const Page = () => {
             </section>
 
             {/* ---------------- Over ons ---------------- */}
-            <section id='over' className='scroll-mt-24'>
-                <div className='mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
+            <section id='over' className='relative scroll-mt-24 overflow-hidden'>
+                <span aria-hidden className='bg-word'>
+                    Warriors
+                </span>
+                <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
                     <Reveal>
-                        <div className='group relative'>
-                            <div aria-hidden className='bg-gold absolute -top-5 -left-5 size-28' />
-                            <div aria-hidden className='border-gold absolute -right-5 -bottom-5 size-28 border-4' />
-                            <div className='relative overflow-hidden'>
-                                <Image
-                                    src={media.community}
-                                    alt='Warriors community'
-                                    width={1081}
-                                    height={608}
-                                    className='media-tint aspect-[4/3] w-full object-cover'
-                                />
+                        <Parallax strength={30}>
+                            <div className='group relative'>
+                                <div aria-hidden className='bg-gold absolute -top-5 -left-5 size-28' />
+                                <div aria-hidden className='border-gold absolute -right-5 -bottom-5 size-28 border-4' />
+                                <div className='relative overflow-hidden'>
+                                    <Image
+                                        src={media.community}
+                                        alt='Warriors community'
+                                        width={1081}
+                                        height={608}
+                                        className='media-tint aspect-[4/3] w-full object-cover'
+                                    />
+                                </div>
                             </div>
-                        </div>
+                        </Parallax>
                     </Reveal>
                     <Reveal delay={150}>
                         <p className='eyebrow'>Over Amsterdam Warriors</p>
@@ -257,12 +244,36 @@ const Page = () => {
                             )}
                         </ul>
                         <div className='mt-11'>
-                            <GoldButton href={links.proefles} external>
-                                Meld je aan
-                            </GoldButton>
+                            <Magnetic>
+                                <GoldButton href={links.proefles} external>
+                                    Meld je aan
+                                </GoldButton>
+                            </Magnetic>
                         </div>
                     </Reveal>
                 </div>
+            </section>
+
+            {/* ---------------- Fotomarquee: de club in beeld ---------------- */}
+            <section aria-label='De club in beeld' className='pb-28'>
+                <Reveal>
+                    <div className='marquee-mask overflow-hidden'>
+                        <div className='marquee-track-slow flex w-max gap-4'>
+                            {[...marqueePhotos, ...marqueePhotos].map((src, index) => (
+                                <div key={`${src}-${index}`} className='group relative h-64 shrink-0 overflow-hidden lg:h-80'>
+                                    <Image
+                                        src={src}
+                                        alt='Amsterdam Warriors in actie'
+                                        width={520}
+                                        height={347}
+                                        sizes='520px'
+                                        className='media-tint h-full w-auto object-cover'
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Reveal>
             </section>
 
             {/* ---------------- Aanbod / programma's ---------------- */}
@@ -354,26 +365,30 @@ const Page = () => {
                         </div>
 
                         <div className='mt-9'>
-                            <GoldButton href={links.tryouts} external>
-                                Aanmelden try-outs
-                            </GoldButton>
+                            <Magnetic>
+                                <GoldButton href={links.tryouts} external>
+                                    Aanmelden try-outs
+                                </GoldButton>
+                            </Magnetic>
                         </div>
                     </Reveal>
 
                     <Reveal delay={150}>
-                        <div className='group relative'>
-                            <div aria-hidden className='border-gold absolute -top-5 -right-5 size-28 border-4' />
-                            <div className='relative overflow-hidden'>
-                                <Image
-                                    src={media.nieuws}
-                                    alt='Warriors team'
-                                    width={1026}
-                                    height={768}
-                                    className='media-tint aspect-[4/5] w-full object-cover object-top'
-                                />
+                        <Parallax strength={30}>
+                            <div className='group relative'>
+                                <div aria-hidden className='border-gold absolute -top-5 -right-5 size-28 border-4' />
+                                <div className='relative overflow-hidden'>
+                                    <Image
+                                        src={media.nieuws}
+                                        alt='Warriors team'
+                                        width={2048}
+                                        height={1152}
+                                        className='media-tint aspect-[4/3] w-full object-cover'
+                                    />
+                                </div>
+                                <div aria-hidden className='bg-gold absolute -bottom-5 -left-5 size-28' />
                             </div>
-                            <div aria-hidden className='bg-gold absolute -bottom-5 -left-5 size-28' />
-                        </div>
+                        </Parallax>
                     </Reveal>
                 </div>
             </section>
@@ -475,8 +490,11 @@ const Page = () => {
             </section>
 
             {/* ---------------- Partners ---------------- */}
-            <section id='partners' className='scroll-mt-24'>
-                <div className='mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
+            <section id='partners' className='relative scroll-mt-24 overflow-hidden'>
+                <span aria-hidden className='bg-word'>
+                    Partners
+                </span>
+                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Samenwerkingen</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
@@ -532,9 +550,11 @@ const Page = () => {
                             is.
                         </p>
                         <div className='mt-11 flex justify-center'>
-                            <GoldButton href={links.proefles} external>
-                                Proefles aanvragen
-                            </GoldButton>
+                            <Magnetic>
+                                <GoldButton href={links.proefles} external>
+                                    Proefles aanvragen
+                                </GoldButton>
+                            </Magnetic>
                         </div>
                     </Reveal>
                 </div>
@@ -643,9 +663,11 @@ const Page = () => {
                             ))}
                         </div>
                         <div className='mt-9'>
-                            <GoldButton href={links.proefles} external>
-                                Word lid
-                            </GoldButton>
+                            <Magnetic>
+                                <GoldButton href={links.proefles} external>
+                                    Word lid
+                                </GoldButton>
+                            </Magnetic>
                         </div>
                     </div>
                 </div>

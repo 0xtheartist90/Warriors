@@ -353,7 +353,47 @@ html.lenis body {
   -webkit-text-stroke: 2px var(--gold);
 }
 
-/* doorlopende partner-marquee */
+/* entree-scherm bij eerste load */
+.intro-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.intro-curtain-leaving {
+  transform: translateY(-100%);
+}
+
+.intro-mark {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* oversized outline-woord als achtergrondtexture per sectie */
+.bg-word {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(6rem, 18vw, 16rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* doorlopende marquees (logo's en foto's) */
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -365,6 +405,15 @@ html.lenis body {
   will-change: transform;
 }
 
+.marquee-track-slow {
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track-slow:hover {
+  animation-play-state: paused;
+}
+
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -374,8 +423,13 @@ html.lenis body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .marquee-track,
+  .marquee-track-slow,
+  .intro-mark {
     animation: none;
+  }
+  .intro-curtain {
+    display: none;
   }
 }
 
