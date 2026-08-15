@@ -128,31 +128,33 @@ const Page = () => {
                 <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
 
-                <div className='relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 lg:px-10'>
+                <div className='relative z-10 mx-auto flex w-full max-w-[1280px] items-center justify-between gap-12 px-6 py-24 lg:px-10'>
+                    <div>
+                        <h1 className='display anim-rise text-[clamp(3.5rem,11vw,9rem)] text-white [animation-delay:160ms]'>
+                            <span className='block'>Work hard</span>
+                            <span className='text-outline block'>
+                                Play hard <span className='text-gold'>/</span>
+                            </span>
+                        </h1>
+                        <div className='anim-rise mt-12 flex flex-wrap items-center gap-8 [animation-delay:420ms]'>
+                            <Magnetic>
+                                <GoldButton href='/word-lid'>Word lid</GoldButton>
+                            </Magnetic>
+                            <Link
+                                href='/aanbod'
+                                className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                                [&nbsp;&nbsp;Ons aanbod&nbsp;&nbsp;]
+                            </Link>
+                        </div>
+                    </div>
                     <Image
                         src={media.logo}
                         alt='Amsterdam Warriors logo'
-                        width={130}
-                        height={104}
+                        width={300}
+                        height={240}
                         priority
-                        className='anim-rise'
+                        className='anim-rise hidden shrink-0 [animation-delay:300ms] lg:block'
                     />
-                    <h1 className='display anim-rise mt-8 text-[clamp(3.5rem,11vw,9rem)] text-white [animation-delay:160ms]'>
-                        <span className='block'>Work hard</span>
-                        <span className='text-outline block'>
-                            Play hard <span className='text-gold'>/</span>
-                        </span>
-                    </h1>
-                    <div className='anim-rise mt-12 flex flex-wrap items-center gap-8 [animation-delay:420ms]'>
-                        <Magnetic>
-                            <GoldButton href='/word-lid'>Word lid</GoldButton>
-                        </Magnetic>
-                        <Link
-                            href='/aanbod'
-                            className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
-                            [&nbsp;&nbsp;Ons aanbod&nbsp;&nbsp;]
-                        </Link>
-                    </div>
                 </div>
 
                 {/* micro-labels in de hoeken */}
