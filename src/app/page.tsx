@@ -521,7 +521,7 @@ const Page = () => {
             {/* ---------------- CTA-banner ---------------- */}
             <section className='relative overflow-hidden'>
                 <Image
-                    src={media.proefles}
+                    src='/images/proeflesbg.jpg'
                     alt='Basketbal bij de Warriors'
                     fill
                     sizes='100vw'

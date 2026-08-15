@@ -62,6 +62,10 @@ const Page = () => {
         <main className='overflow-x-clip'>
             {/* Paginakop */}
             <section className='relative overflow-hidden pt-40 pb-20'>
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/spotlightbg.jpg)] bg-cover bg-center opacity-15'
+                />
                 <span aria-hidden className='bg-word'>
                     Aanbod
                 </span>
