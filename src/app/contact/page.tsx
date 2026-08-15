@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import { GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
@@ -89,6 +90,20 @@ const Page = () => {
                         ))}
                     </div>
                 </div>
+            </section>
+
+            {/* Sfeerbeeld */}
+            <section aria-label='Het Warriors team'>
+                <Reveal>
+                    <Image
+                        src='/images/Marquee/Warriors5.jpg'
+                        alt='Warriors spelers met de clubbanner'
+                        width={1999}
+                        height={1333}
+                        sizes='100vw'
+                        className='media-tint h-72 w-full object-cover lg:h-[28rem]'
+                    />
+                </Reveal>
             </section>
 
             {/* Praktische info */}

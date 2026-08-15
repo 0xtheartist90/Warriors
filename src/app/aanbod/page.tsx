@@ -217,7 +217,17 @@ const Page = () => {
                             </div>
                         </Reveal>
                         <Reveal delay={150}>
-                            <ul className='space-y-4 text-sm text-white/75 lg:mt-12'>
+                            <div className='relative overflow-hidden'>
+                                <Image
+                                    src={media.girls}
+                                    alt='Jonge Warriors in actie'
+                                    width={1080}
+                                    height={608}
+                                    className='media-tint aspect-video w-full object-cover'
+                                />
+                                <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
+                            </div>
+                            <ul className='mt-8 space-y-4 text-sm text-white/75'>
                                 <li className='flex items-center gap-3'>
                                     <Calendar className='text-gold size-4 shrink-0' /> Zaterdag 21 februari 2026
                                 </li>

@@ -88,6 +88,20 @@ const Page = () => {
                 </div>
             </section>
 
+            {/* Sfeerbeeld */}
+            <section aria-label='De Warriors bij elkaar'>
+                <Reveal>
+                    <Image
+                        src='/images/Marquee/Warriors6.jpg'
+                        alt='Warriors spelers en trainers bij elkaar'
+                        width={1999}
+                        height={1333}
+                        sizes='100vw'
+                        className='media-tint h-72 w-full object-cover lg:h-[28rem]'
+                    />
+                </Reveal>
+            </section>
+
             {/* Warriors × Hedy Tjin */}
             <section className='relative overflow-hidden'>
                 <div
@@ -98,8 +112,8 @@ const Page = () => {
                     <Reveal>
                         <div className='group relative overflow-hidden'>
                             <Image
-                                src={media.girls}
-                                alt='Warriors kledinglijn'
+                                src='/images/nieuws.jpg'
+                                alt='Warriors tenue uit de Hedy Tjin kledinglijn'
                                 width={1080}
                                 height={810}
                                 className='media-tint aspect-[4/3] w-full object-cover'
