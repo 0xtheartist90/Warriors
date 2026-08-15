@@ -198,8 +198,6 @@ const Page = () => {
                     <Reveal>
                         <Parallax strength={30}>
                             <div className='group relative'>
-                                <div aria-hidden className='bg-gold absolute -top-5 -left-5 size-28' />
-                                <div aria-hidden className='border-gold absolute -right-5 -bottom-5 size-28 border-4' />
                                 <div className='relative overflow-hidden'>
                                     <Image
                                         src={media.community}
@@ -363,7 +361,6 @@ const Page = () => {
                     <Reveal delay={150}>
                         <Parallax strength={30}>
                             <div className='group relative'>
-                                <div aria-hidden className='border-gold absolute -top-5 -right-5 size-28 border-4' />
                                 <div className='relative overflow-hidden'>
                                     <Image
                                         src={media.nieuws}
@@ -373,7 +370,6 @@ const Page = () => {
                                         className='media-tint aspect-[4/3] w-full object-cover'
                                     />
                                 </div>
-                                <div aria-hidden className='bg-gold absolute -bottom-5 -left-5 size-28' />
                             </div>
                         </Parallax>
                     </Reveal>
