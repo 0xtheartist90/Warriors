@@ -357,15 +357,6 @@ html.lenis body {
 }
 
 /* zachte gouden gloed achter de hero-kop */
-.hero-glow {
-  position: absolute;
-  width: 55rem;
-  height: 55rem;
-  border-radius: 100%;
-  background: radial-gradient(circle, rgba(239, 168, 45, 0.12) 0%, transparent 62%);
-  pointer-events: none;
-}
-
 /* hero entrance */
 @keyframes rise {
   from {
@@ -394,6 +385,15 @@ html.lenis body {
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* zonder JavaScript blijft alle content gewoon zichtbaar */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* holle outline-typografie voor grote display-woorden */

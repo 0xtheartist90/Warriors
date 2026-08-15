@@ -33,7 +33,6 @@ const Page = () => {
                     Contact
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <p className='eyebrow anim-rise'>Contact</p>
                     <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
                         We horen graag <span className='text-gold'>van je</span>
                     </h1>
@@ -66,8 +65,10 @@ const Page = () => {
                                 <a
                                     href={`mailto:${item.email}`}
                                     className='bg-navy-card border-hairline hover:border-gold/40 group flex h-full flex-col border p-8 transition-colors duration-500'>
-                                    <Mail className='text-gold size-5' />
-                                    <h3 className='display mt-4 text-xl text-white'>{item.onderwerp}</h3>
+                                    <div className='flex items-center gap-3'>
+                                        <Mail className='text-gold size-5 shrink-0' />
+                                        <h3 className='display text-xl text-white'>{item.onderwerp}</h3>
+                                    </div>
                                     <p className='mt-2 flex-1 text-sm leading-relaxed text-white/60'>
                                         {item.toelichting}
                                     </p>
@@ -100,8 +101,8 @@ const Page = () => {
                                     <span>
                                         <a className='text-gold hover:underline' href={contact.telefoonHref}>
                                             {contact.telefoon}
-                                        </a>{' '}
-                                        — doordeweeks van 10:00 tot 18:00, ook bereikbaar via WhatsApp.
+                                        </a>
+                                        , doordeweeks van 10:00 tot 18:00 en ook bereikbaar via WhatsApp.
                                     </span>
                                 </li>
                                 <li className='flex items-start gap-3'>

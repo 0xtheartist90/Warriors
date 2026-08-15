@@ -133,7 +133,6 @@ const Page = () => {
                 {/* vignet: donkere randen voor cinematische focus op het midden */}
                 <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
-                <div aria-hidden className='hero-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' />
 
                 <div className='relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center px-6 py-24 text-center lg:px-10'>
                     <Image
@@ -142,7 +141,7 @@ const Page = () => {
                         width={240}
                         height={192}
                         priority
-                        className='anim-rise drop-shadow-[0_0_35px_rgba(239,168,45,0.25)]'
+                        className='anim-rise'
                     />
                     <p className='eyebrow anim-rise mt-8 [animation-delay:120ms]'>Basketbalclub Amsterdam Zuidoost</p>
                     <h1 className='display mt-6 text-[clamp(3rem,8vw,6.5rem)] text-white'>
@@ -290,7 +289,7 @@ const Page = () => {
                                             alt={programma.title}
                                             fill
                                             sizes='(max-width: 768px) 100vw, 33vw'
-                                            className='media-tint object-cover transition-transform duration-700 group-hover:scale-105'
+                                            className='media-tint object-cover'
                                         />
                                         <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
                                     </div>
@@ -337,7 +336,7 @@ const Page = () => {
                             meisjes vanaf het geboortejaar 2016.
                         </p>
 
-                        <div className='border-hairline mt-9 border border-l-2 border-l-[var(--gold)] p-7'>
+                        <div className='border-hairline mt-9 border border-t-2 border-t-[var(--gold)] p-7'>
                             <h3 className='display text-gold text-xl'>Selectietrainingen 2026/2027</h3>
                             <ul className='mt-5 space-y-3.5 text-sm text-white/75'>
                                 <li className='flex items-center gap-3'>

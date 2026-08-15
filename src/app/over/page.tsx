@@ -53,7 +53,6 @@ const Page = () => {
                     Missie
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <p className='eyebrow anim-rise'>Onze missie</p>
                     <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
                         Een nieuwe manier van <span className='text-gold'>bewegen</span>
                     </h1>

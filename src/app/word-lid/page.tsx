@@ -45,7 +45,6 @@ const Page = () => {
                     Word lid
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <p className='eyebrow anim-rise'>Sluit je aan</p>
                     <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
                         Wil jij een Amsterdam <span className='text-gold'>Warrior</span> worden?
                     </h1>

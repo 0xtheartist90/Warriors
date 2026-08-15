@@ -70,7 +70,6 @@ const Page = () => {
                     Aanbod
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
-                    <p className='eyebrow anim-rise'>Ons aanbod</p>
                     <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
                         Eén <span className='text-gold'>doorgroeipad</span>, voor elke leeftijd
                     </h1>
@@ -96,7 +95,7 @@ const Page = () => {
                                     alt={programma.title}
                                     width={1080}
                                     height={720}
-                                    className='media-tint aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105'
+                                    className='media-tint aspect-[4/3] w-full object-cover'
                                 />
                                 <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
                             </div>
@@ -182,7 +181,7 @@ const Page = () => {
             {/* Scholentoernooi */}
             <section className='bg-navy-light'>
                 <div className='mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
-                    <div className='border-hairline grid gap-12 border border-l-2 border-l-[var(--gold)] p-9 lg:grid-cols-2 lg:p-14'>
+                    <div className='border-hairline grid gap-12 border border-t-2 border-t-[var(--gold)] p-9 lg:grid-cols-2 lg:p-14'>
                         <Reveal>
                             <p className='eyebrow'>Evenement</p>
                             <h2 className='display mt-4 text-4xl text-white lg:text-5xl'>
