@@ -249,12 +249,8 @@ const Page = () => {
             </section>
 
             {/* Contributie */}
-            <section id='contributie' className='relative scroll-mt-24 overflow-hidden'>
-                <div
-                    aria-hidden
-                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
-                />
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
+            <section id='contributie' className='scroll-mt-24'>
+                <div className='mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Seizoen september t/m mei</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
