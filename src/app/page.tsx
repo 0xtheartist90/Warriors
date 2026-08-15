@@ -311,7 +311,10 @@ const Page = () => {
 
             {/* ---------------- Nieuws / try-outs ---------------- */}
             <section id='nieuws' className='relative scroll-mt-24 overflow-hidden'>
-                <SmokeBackground />
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                />
                 <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Nieuws</p>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
+import SmokeBackground from '@/components/site/smoke-background';
 import { contact, links, socials } from '@/lib/site';
 
 const aanbodLinks = [
@@ -23,14 +24,17 @@ const clubLinks = [
 const SiteFooter = () => (
     <footer id='contact-footer' className='border-hairline overflow-hidden border-t'>
         {/* CTA-statement */}
-        <div className='mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-10 px-6 pt-24 pb-16 lg:px-10'>
+        <div className='relative'>
+            <SmokeBackground />
+            <div className='relative z-10 mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-10 px-6 pt-24 pb-16 lg:px-10'>
             <h2 className='display max-w-3xl text-[clamp(2.75rem,7vw,5.5rem)] text-white'>
                 Klaar om mee <span className='text-outline'>te doen</span>{' '}
                 <span className='text-gold'>/</span>
             </h2>
-            <Magnetic>
-                <GoldButton href='/word-lid'>Word lid</GoldButton>
-            </Magnetic>
+                <Magnetic>
+                    <GoldButton href='/word-lid'>Word lid</GoldButton>
+                </Magnetic>
+            </div>
         </div>
 
         {/* Linkkolommen */}
