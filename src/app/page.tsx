@@ -5,7 +5,6 @@ import Magnetic from '@/components/site/magnetic';
 import Parallax from '@/components/site/parallax';
 import Reveal from '@/components/site/reveal';
 import SmokeBackground from '@/components/site/smoke-background';
-import StatCounter from '@/components/site/stat-counter';
 
 import { ArrowRight, Calendar, Check, Clock, MapPin } from 'lucide-react';
 
@@ -174,16 +173,16 @@ const Page = () => {
                 </Link>
             </section>
 
-            {/* ---------------- Sinds 2014: ghost-getal ---------------- */}
+            {/* ---------------- Statement: ghost-woord ---------------- */}
             <section className='border-hairline border-y'>
                 <div className='mx-auto max-w-[1280px] px-6 py-20 lg:px-10'>
                     <Reveal>
-                        <p className='display text-center text-[clamp(5rem,17vw,15rem)] leading-none text-white/[0.07]'>
-                            <StatCounter value={2014} />
+                        <p className='display text-center text-[clamp(4.5rem,15vw,13rem)] leading-none whitespace-nowrap text-white/[0.07]'>
+                            Zuidoost
                         </p>
                         <div className='display mt-2 flex flex-col justify-between gap-3 text-xs tracking-[0.15em] text-white/60 sm:flex-row'>
-                            <p>Sinds 2014 bouwen we aan sport in Zuidoost,</p>
-                            <p>van basketbalschool tot Eredivisie.</p>
+                            <p>Van de buurt, voor de buurt,</p>
+                            <p>van je eerste dribbel tot de Eredivisie.</p>
                         </div>
                     </Reveal>
                 </div>
