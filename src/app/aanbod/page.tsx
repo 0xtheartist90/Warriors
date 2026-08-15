@@ -333,6 +333,20 @@ const Page = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Full-width sfeerbanner */}
+            <section aria-label='Het Warriors team'>
+                <Reveal>
+                    <Image
+                        src='/images/Marquee/Warriors5.jpg'
+                        alt='Warriors spelers met de clubbanner'
+                        width={1440}
+                        height={960}
+                        sizes='100vw'
+                        className='media-tint h-72 w-full object-cover lg:h-[28rem]'
+                    />
+                </Reveal>
+            </section>
         </main>
     );
 };
