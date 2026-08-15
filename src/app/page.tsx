@@ -199,7 +199,9 @@ const Page = () => {
             </section>
 
             {/* ---------------- Over ons ---------------- */}
-            <section id='over' className='relative scroll-mt-24 overflow-hidden'>
+            <section
+                id='over'
+                className='relative scroll-mt-24 overflow-hidden bg-[url(/images/blackbg.jpg)] bg-cover bg-center'>
                 <span aria-hidden className='bg-word'>
                     Warriors
                 </span>
@@ -255,7 +257,7 @@ const Page = () => {
             </section>
 
             {/* ---------------- Fotomarquee: de club in beeld ---------------- */}
-            <section aria-label='De club in beeld' className='pb-28'>
+            <section aria-label='De club in beeld'>
                 <Reveal>
                     <div className='marquee-mask overflow-hidden'>
                         <div className='marquee-track-slow flex w-max gap-4'>
@@ -328,7 +330,9 @@ const Page = () => {
             </section>
 
             {/* ---------------- Nieuws / try-outs ---------------- */}
-            <section id='nieuws' className='scroll-mt-24'>
+            <section
+                id='nieuws'
+                className='scroll-mt-24 bg-[url(/images/blackbg.jpg)] bg-cover bg-center'>
                 <div className='mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Nieuws</p>
