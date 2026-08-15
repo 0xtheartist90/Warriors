@@ -175,9 +175,9 @@ const Page = () => {
 
             {/* ---------------- Statement: ghost-woord ---------------- */}
             <section className='border-hairline border-y'>
-                <div className='mx-auto max-w-[1280px] px-6 py-20 lg:px-10'>
+                <div className='mx-auto max-w-[1280px] px-6 py-12 lg:px-10'>
                     <Reveal>
-                        <p className='display text-center text-[clamp(4.5rem,15vw,13rem)] leading-none whitespace-nowrap text-white/[0.07]'>
+                        <p className='display text-center text-[clamp(5.5rem,21vw,19rem)] leading-none whitespace-nowrap text-white/[0.07]'>
                             Zuidoost
                         </p>
                         <div className='display mt-2 flex flex-col justify-between gap-3 text-xs tracking-[0.15em] text-white/60 sm:flex-row'>
