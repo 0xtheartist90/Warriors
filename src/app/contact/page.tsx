@@ -94,16 +94,32 @@ const Page = () => {
 
             {/* Sfeerbeeld */}
             <section aria-label='Het Warriors team'>
-                <Reveal>
-                    <Image
-                        src='/images/Marquee/Warriors5.jpg'
-                        alt='Warriors spelers met de clubbanner'
-                        width={1999}
-                        height={1333}
-                        sizes='100vw'
-                        className='media-tint h-72 w-full object-cover lg:h-[28rem]'
-                    />
-                </Reveal>
+                <div className='mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10'>
+                    <Reveal>
+                        <div className='relative max-w-md overflow-hidden'>
+                            <Image
+                                src='/images/contact.jpeg'
+                                alt='Warriors jeugdteam met medailles en trofee'
+                                width={414}
+                                height={414}
+                                className='media-tint w-full object-cover'
+                            />
+                            <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
+                        </div>
+                    </Reveal>
+                    <Reveal delay={150}>
+                        <h2 className='display text-4xl text-white lg:text-6xl'>
+                            <span className='block'>Work hard</span>
+                            <span className='text-outline block'>
+                                play hard <span className='text-gold'>/</span>
+                            </span>
+                        </h2>
+                        <p className='mt-6 max-w-md leading-relaxed text-white/70'>
+                            Van je eerste dribbel tot een medaille om je nek: bij de Warriors hoor je erbij. Vragen?
+                            We staan voor je klaar.
+                        </p>
+                    </Reveal>
+                </div>
             </section>
 
             {/* Praktische info */}
