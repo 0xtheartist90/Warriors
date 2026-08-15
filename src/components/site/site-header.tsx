@@ -13,10 +13,12 @@ const navItems = [
     { label: 'Contact', href: '/contact' }
 ];
 
-/* Vaste header die verdicht bij scrollen en de actieve pagina in goud markeert. */
+/* Vaste header die verdicht bij scrollen en de actieve pagina in goud markeert.
+   Op de homepage blijft het logo verborgen tot je scrolt: de hero draagt daar het logo. */
 const SiteHeader = () => {
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+    const logoHidden = pathname === '/' && !scrolled;
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 40);
@@ -35,7 +37,13 @@ const SiteHeader = () => {
                 className={`mx-auto flex max-w-[1280px] items-center justify-between px-6 transition-all duration-500 lg:px-10 ${
                     scrolled ? 'h-16' : 'h-20'
                 }`}>
-                <Link href='/' className='flex items-center gap-3'>
+                <Link
+                    href='/'
+                    aria-hidden={logoHidden}
+                    tabIndex={logoHidden ? -1 : undefined}
+                    className={`flex items-center gap-3 transition-all duration-500 ${
+                        logoHidden ? 'pointer-events-none -translate-y-2 opacity-0' : 'translate-y-0 opacity-100'
+                    }`}>
                     <Image
                         src='https://static.wixstatic.com/media/c5b4b1_84232c49e5e44f92a76ac8e0a0000621~mv2.png'
                         alt='Amsterdam Warriors logo'
