@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { GhostButton, GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
 import Reveal from '@/components/site/reveal';
+import SmokeBackground from '@/components/site/smoke-background';
 import { links, media } from '@/lib/site';
 
 import { ArrowRight } from 'lucide-react';
@@ -46,7 +47,7 @@ const Page = () => {
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
                     <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
-                        Wil jij een Amsterdam <span className='text-gold'>Warrior</span> worden?
+                        Wil jij een Amsterdam <span className='text-gold'>Warrior</span> worden? <span className='text-gold'>/</span>
                     </h1>
                     <p className='anim-rise mt-6 max-w-2xl leading-relaxed text-white/70 [animation-delay:240ms]'>
                         Wat leuk dat je ervoor kiest om je aan te sluiten bij onze sportfamilie! Onderneem de volgende
@@ -83,10 +84,7 @@ const Page = () => {
 
             {/* Besparen */}
             <section className='relative overflow-hidden'>
-                <div
-                    aria-hidden
-                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
-                />
+                <SmokeBackground />
                 <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Wist je dat...</p>

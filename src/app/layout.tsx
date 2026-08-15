@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { Metadata } from 'next';
-import { Oswald } from 'next/font/google';
+import { Anton } from 'next/font/google';
 import localFont from 'next/font/local';
 
 import '@/app/globals.css';
@@ -16,8 +16,9 @@ const geistSans = localFont({
     weight: '100 900'
 });
 
-const oswald = Oswald({
+const anton = Anton({
     subsets: ['latin'],
+    weight: '400',
     variable: '--font-oswald'
 });
 
@@ -31,7 +32,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
     return (
         <html suppressHydrationWarning lang='nl' className='dark'>
             <body
-                className={`${geistSans.variable} ${oswald.variable} bg-navy text-foreground overscroll-none font-sans antialiased`}>
+                className={`${geistSans.variable} ${anton.variable} bg-navy text-foreground overscroll-none font-sans antialiased`}>
                 <SmoothScroll>
                     <SiteHeader />
                     {children}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Magnetic from '@/components/site/magnetic';
 import Parallax from '@/components/site/parallax';
 import Reveal from '@/components/site/reveal';
+import SmokeBackground from '@/components/site/smoke-background';
 import StatCounter from '@/components/site/stat-counter';
 
 import { ArrowRight, Calendar, Check, Clock, MapPin } from 'lucide-react';
@@ -45,13 +46,6 @@ const links = {
     leergeld: 'https://www.leergeldamsterdam.nl/mogelijkheden/contributie-sport',
     potjescheck: 'https://potjescheck.geldfit.nl/'
 };
-
-const stats = [
-    { value: 2014, suffix: '', label: 'Opgericht in Zuidoost' },
-    { value: 4, suffix: '+', label: 'Basketbal vanaf 4 jaar' },
-    { value: 3, suffix: '', label: "Programma's voor elk niveau" },
-    { value: 12, suffix: '', label: 'Partners in de wijk' }
-];
 
 const programmas = [
     {
@@ -134,29 +128,41 @@ const Page = () => {
                 <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
 
-                <div className='relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center px-6 py-24 text-center lg:px-10'>
+                <div className='relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 lg:px-10'>
                     <Image
                         src={media.logo}
                         alt='Amsterdam Warriors logo'
-                        width={240}
-                        height={192}
+                        width={130}
+                        height={104}
                         priority
                         className='anim-rise'
                     />
-                    <p className='eyebrow anim-rise mt-8 [animation-delay:120ms]'>Basketbalclub Amsterdam Zuidoost</p>
-                    <h1 className='display mt-6 text-[clamp(3rem,8vw,6.5rem)] text-white'>
-                        <span className='anim-rise block [animation-delay:240ms]'>Work hard</span>
-                        <span className='anim-rise text-outline block [animation-delay:380ms]'>play hard</span>
+                    <h1 className='display anim-rise mt-8 text-[clamp(3.5rem,11vw,9rem)] text-white [animation-delay:160ms]'>
+                        <span className='block'>Work</span>
+                        <span className='block'>Hard</span>
+                        <span className='block'>
+                            Play hard <span className='text-gold'>/</span>
+                        </span>
                     </h1>
-                    <div className='anim-rise mt-12 flex flex-wrap justify-center gap-4 [animation-delay:520ms]'>
+                    <div className='anim-rise mt-12 flex flex-wrap items-center gap-8 [animation-delay:420ms]'>
                         <Magnetic>
                             <GoldButton href='/word-lid'>Word lid</GoldButton>
                         </Magnetic>
-                        <Magnetic>
-                            <GhostButton href='/aanbod'>Ons aanbod</GhostButton>
-                        </Magnetic>
+                        <Link
+                            href='/aanbod'
+                            className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                            [&nbsp;&nbsp;Ons aanbod&nbsp;&nbsp;]
+                        </Link>
                     </div>
                 </div>
+
+                {/* micro-labels in de hoeken */}
+                <p className='display anim-rise absolute bottom-10 left-6 z-10 max-w-56 text-xs leading-relaxed tracking-[0.15em] text-white/60 [animation-delay:700ms] lg:left-10'>
+                    Basketbalclub Amsterdam Zuidoost. Voor iedereen vanaf 4 jaar.
+                </p>
+                <p className='display anim-rise absolute right-6 bottom-10 z-10 text-xs tracking-[0.15em] text-white/60 [animation-delay:700ms] lg:right-10'>
+                    Sinds 2014
+                </p>
 
                 {/* scroll-indicator */}
                 <Link
@@ -167,30 +173,24 @@ const Page = () => {
                 </Link>
             </section>
 
-            {/* ---------------- Stats ---------------- */}
+            {/* ---------------- Sinds 2014: ghost-getal ---------------- */}
             <section className='border-hairline border-y'>
-                <div className='mx-auto grid max-w-[1280px] grid-cols-2 gap-x-8 gap-y-10 px-6 py-14 lg:grid-cols-4 lg:px-10'>
-                    {stats.map((stat, index) => (
-                        <Reveal key={stat.label} delay={index * 100}>
-                            <div className='flex items-baseline gap-4'>
-                                <span className='display text-gold text-5xl'>
-                                    <StatCounter value={stat.value} suffix={stat.suffix} />
-                                </span>
-                                <span className='display max-w-28 text-sm leading-tight text-white/60'>
-                                    {stat.label}
-                                </span>
-                            </div>
-                        </Reveal>
-                    ))}
+                <div className='mx-auto max-w-[1280px] px-6 py-20 lg:px-10'>
+                    <Reveal>
+                        <p className='display text-center text-[clamp(5rem,17vw,15rem)] leading-none text-white/[0.07]'>
+                            <StatCounter value={2014} />
+                        </p>
+                        <div className='display mt-2 flex flex-col justify-between gap-3 text-xs tracking-[0.15em] text-white/60 sm:flex-row'>
+                            <p>Sinds 2014 bouwen we aan sport in Zuidoost,</p>
+                            <p>van basketbalschool tot Eredivisie.</p>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
 
             {/* ---------------- Over ons ---------------- */}
             <section id='over' className='relative scroll-mt-24 overflow-hidden'>
-                <div
-                    aria-hidden
-                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
-                />
+                <SmokeBackground />
                 <span aria-hidden className='bg-word'>
                     Warriors
                 </span>
@@ -215,7 +215,7 @@ const Page = () => {
                     <Reveal delay={150}>
                         <p className='eyebrow'>Over Amsterdam Warriors</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            Dé plek voor basketbal in <span className='text-gold'>Zuidoost</span> vanaf 4 jaar
+                            Dé plek voor basketbal in <span className='text-gold'>Zuidoost</span> vanaf 4 jaar <span className='text-gold'>/</span>
                         </h2>
                         <p className='mt-6 leading-relaxed text-white/70'>
                             Welkom bij Amsterdam Warriors! Wij zijn de basketbalclub van Amsterdam Zuidoost, waar je de
@@ -272,14 +272,14 @@ const Page = () => {
                     <Reveal>
                         <p className='eyebrow'>Ons aanbod</p>
                         <h2 className='display mt-5 max-w-2xl text-4xl text-white lg:text-5xl'>
-                            Een <span className='text-gold'>programma</span> voor elke leeftijd en elk niveau
+                            Een <span className='text-gold'>programma</span> voor elke leeftijd en elk niveau <span className='text-gold'>/</span>
                         </h2>
                     </Reveal>
 
-                    <div className='mt-16 grid gap-6 md:grid-cols-3'>
+                    <div className='mt-16 grid gap-x-6 gap-y-14 md:grid-cols-3'>
                         {programmas.map((programma, index) => (
                             <Reveal key={programma.title} delay={index * 120}>
-                                <article className='bg-navy-card group border-hairline hover:border-gold/40 flex h-full flex-col border transition-colors duration-500'>
+                                <Link href={`/aanbod#${programma.id}`} className='group flex h-full flex-col'>
                                     <div className='relative aspect-[16/10] overflow-hidden'>
                                         <Image
                                             src={
@@ -291,24 +291,19 @@ const Page = () => {
                                             sizes='(max-width: 768px) 100vw, 33vw'
                                             className='media-tint object-cover'
                                         />
-                                        <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
                                     </div>
-                                    <div className='flex flex-1 flex-col p-8'>
-                                        <span className='display text-gold text-sm tracking-[0.25em]'>
-                                            {String(index + 1).padStart(2, '0')}
-                                        </span>
-                                        <h3 className='display mt-3 text-2xl text-white'>{programma.title}</h3>
-                                        <p className='mt-4 flex-1 text-sm leading-relaxed text-white/60'>
-                                            {programma.text}
-                                        </p>
-                                        <Link
-                                            href={`/aanbod#${programma.id}`}
-                                            className='display text-gold group/link mt-7 inline-flex items-center gap-2 text-sm tracking-[0.2em]'>
-                                            Meer lezen
-                                            <ArrowRight className='size-4 transition-transform duration-300 group-hover/link:translate-x-1' />
-                                        </Link>
-                                    </div>
-                                </article>
+                                    <h3 className='display mt-6 text-3xl text-white'>
+                                        <span className='text-gold'>{String(index + 1).padStart(2, '0')}.</span>{' '}
+                                        {programma.title}
+                                    </h3>
+                                    <p className='mt-4 flex-1 text-sm leading-relaxed text-white/60'>
+                                        {programma.text}
+                                    </p>
+                                    <span className='display text-gold group-hover:text-gold-dark mt-6 inline-flex items-center gap-2 text-sm tracking-[0.2em] transition-colors duration-300'>
+                                        Meer lezen
+                                        <ArrowRight className='size-4 transition-transform duration-300 group-hover:translate-x-1' />
+                                    </span>
+                                </Link>
                             </Reveal>
                         ))}
                     </div>
@@ -317,15 +312,12 @@ const Page = () => {
 
             {/* ---------------- Nieuws / try-outs ---------------- */}
             <section id='nieuws' className='relative scroll-mt-24 overflow-hidden'>
-                <div
-                    aria-hidden
-                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
-                />
+                <SmokeBackground />
                 <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Nieuws</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            Amsterdam Warriors gaat <span className='text-gold'>landelijk!</span>
+                            Amsterdam Warriors gaat <span className='text-gold'>landelijk /</span>
                         </h2>
                         <p className='mt-6 leading-relaxed text-white/70'>
                             Bij de Amsterdam Warriors kijken we niet alleen terug, maar bouwen we ook vooruit! Na een
@@ -531,7 +523,7 @@ const Page = () => {
                     <Reveal>
                         <p className='eyebrow'>Doe mee</p>
                         <h2 className='display mt-5 max-w-3xl text-4xl text-white lg:text-6xl'>
-                            Kom een <span className='text-gold'>proefles</span> volgen
+                            Kom een <span className='text-gold'>proefles</span> volgen <span className='text-gold'>/</span>
                         </h2>
                         <p className='mx-auto mt-6 max-w-xl text-white/75'>
                             Meld je aan voor een proefles en ervaar zelf hoe leuk basketbal bij de Amsterdam Warriors

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
 import Reveal from '@/components/site/reveal';
+import SmokeBackground from '@/components/site/smoke-background';
 import { contact, links } from '@/lib/site';
 
 import { Building2, FileText, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
@@ -34,7 +35,7 @@ const Page = () => {
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10'>
                     <h1 className='display anim-rise mt-5 max-w-3xl text-5xl text-white [animation-delay:120ms] lg:text-7xl'>
-                        We horen graag <span className='text-gold'>van je</span>
+                        We horen graag <span className='text-gold'>van je /</span>
                     </h1>
                     <p className='anim-rise mt-6 max-w-2xl leading-relaxed text-white/70 [animation-delay:240ms]'>
                         Bel of app ons doordeweeks tussen 10:00 en 18:00, of stuur een e-mail. Met een gerichte vraag
@@ -84,10 +85,7 @@ const Page = () => {
 
             {/* Praktische info */}
             <section className='relative overflow-hidden'>
-                <div
-                    aria-hidden
-                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
-                />
+                <SmokeBackground />
                 <div className='relative z-10 mx-auto grid max-w-[1280px] gap-6 px-6 py-24 md:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <div className='border-hairline h-full border p-9'>
