@@ -204,27 +204,29 @@
    ============================================================ */
 :root,
 .dark {
-  --navy: #0c1322;
-  --navy-light: #131d33;
-  --navy-card: #17233d;
+  /* volledig zwart, goud alleen als accent */
+  --navy: #060606;
+  --navy-light: #0b0b0b;
+  --navy-card: #101010;
   --gold: #efa82d;
   --gold-dark: #d9931f;
+  --hairline: rgba(255, 255, 255, 0.08);
 
   --background: var(--navy);
-  --foreground: #eef1f6;
+  --foreground: #f2f2f0;
   --card: var(--navy-card);
-  --card-foreground: #eef1f6;
+  --card-foreground: #f2f2f0;
   --popover: var(--navy-card);
-  --popover-foreground: #eef1f6;
+  --popover-foreground: #f2f2f0;
   --primary: var(--gold);
-  --primary-foreground: #0c1322;
+  --primary-foreground: #060606;
   --secondary: var(--navy-light);
-  --secondary-foreground: #eef1f6;
-  --muted: #1b2740;
-  --muted-foreground: #93a0b8;
+  --secondary-foreground: #f2f2f0;
+  --muted: #161616;
+  --muted-foreground: #9a9a94;
   --accent: var(--gold);
-  --accent-foreground: #0c1322;
-  --border: rgba(239, 168, 45, 0.22);
+  --accent-foreground: #060606;
+  --border: var(--hairline);
   --input: rgba(255, 255, 255, 0.12);
   --ring: var(--gold);
   --radius: 0rem;
@@ -236,6 +238,7 @@
   --color-navy-card: var(--navy-card);
   --color-gold: var(--gold);
   --color-gold-dark: var(--gold-dark);
+  --color-hairline: var(--hairline);
   --font-display: var(--font-oswald);
 }
 
@@ -244,8 +247,32 @@
   color: var(--navy);
 }
 
-html {
-  scroll-behavior: smooth;
+/* smooth scrolling wordt door Lenis afgehandeld */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* verfijnde smalle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border: 3px solid var(--navy);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
 }
 
 /* sportieve condensed display-koppen */
@@ -320,9 +347,41 @@ html {
   transform: none;
 }
 
-/* consistente navy-tint op contentfotografie; kleurt op bij hover */
+/* holle outline-typografie voor grote display-woorden */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--gold);
+}
+
+/* doorlopende partner-marquee */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* cinematische grade op contentfotografie; kleurt op bij hover */
 .media-tint {
-  filter: saturate(0.82) contrast(1.04);
+  filter: saturate(0.72) contrast(1.06) brightness(0.94);
   transition: filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 

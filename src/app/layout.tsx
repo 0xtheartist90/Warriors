@@ -5,6 +5,7 @@ import { Oswald } from 'next/font/google';
 import localFont from 'next/font/local';
 
 import '@/app/globals.css';
+import SmoothScroll from '@/components/site/smooth-scroll';
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -28,7 +29,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='nl' className='dark'>
             <body
                 className={`${geistSans.variable} ${oswald.variable} bg-navy text-foreground overscroll-none font-sans antialiased`}>
-                {children}
+                <SmoothScroll>{children}</SmoothScroll>
                 <div aria-hidden className='grain' />
             </body>
         </html>

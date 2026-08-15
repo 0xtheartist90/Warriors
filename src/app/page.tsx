@@ -131,7 +131,7 @@ const Page = () => {
     return (
         <main className='overflow-x-clip'>
             {/* ---------------- Header ---------------- */}
-            <header className='border-gold/15 bg-navy/85 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md'>
+            <header className='border-hairline bg-navy/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md'>
                 <div className='mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10'>
                     <Link href='#' className='flex items-center gap-3'>
                         <Image src={media.logo} alt='Amsterdam Warriors logo' width={52} height={42} />
@@ -184,7 +184,7 @@ const Page = () => {
                     <p className='eyebrow anim-rise'>Basketbalclub Amsterdam Zuidoost</p>
                     <h1 className='display mt-6 max-w-3xl text-[clamp(3rem,8vw,6rem)] text-white'>
                         <span className='anim-rise block [animation-delay:120ms]'>Work hard</span>
-                        <span className='anim-rise text-gold block [animation-delay:260ms]'>play hard</span>
+                        <span className='anim-rise text-outline block [animation-delay:260ms]'>play hard</span>
                     </h1>
                     <p className='anim-rise mt-7 max-w-xl text-lg leading-relaxed text-white/75 [animation-delay:400ms]'>
                         Sporten in een veilige omgeving doe je bij de Amsterdam Warriors! We zijn een sportclub voor
@@ -201,7 +201,7 @@ const Page = () => {
             </section>
 
             {/* ---------------- Stats ---------------- */}
-            <section className='border-gold/15 border-y'>
+            <section className='border-hairline border-y'>
                 <div className='mx-auto grid max-w-[1280px] grid-cols-2 gap-x-8 gap-y-10 px-6 py-14 lg:grid-cols-4 lg:px-10'>
                     {stats.map((stat, index) => (
                         <Reveal key={stat.label} delay={index * 100}>
@@ -278,7 +278,7 @@ const Page = () => {
                     <div className='mt-16 grid gap-6 md:grid-cols-3'>
                         {programmas.map((programma, index) => (
                             <Reveal key={programma.title} delay={index * 120}>
-                                <article className='bg-navy-card group border-gold/10 hover:border-gold/40 flex h-full flex-col border transition-colors duration-500'>
+                                <article className='bg-navy-card group border-hairline hover:border-gold/40 flex h-full flex-col border transition-colors duration-500'>
                                     <div className='relative aspect-[16/10] overflow-hidden'>
                                         <Image
                                             src={
@@ -333,7 +333,7 @@ const Page = () => {
                             meisjes vanaf het geboortejaar 2016.
                         </p>
 
-                        <div className='border-gold/25 mt-9 border p-7'>
+                        <div className='border-hairline mt-9 border border-l-2 border-l-[var(--gold)] p-7'>
                             <h3 className='display text-gold text-xl'>Selectietrainingen 2026/2027</h3>
                             <ul className='mt-5 space-y-3.5 text-sm text-white/75'>
                                 <li className='flex items-center gap-3'>
@@ -465,7 +465,7 @@ const Page = () => {
                                     Meer informatie
                                     <ArrowRight className='size-4 transition-transform duration-300 group-hover/link:translate-x-1' />
                                 </a>
-                                <div className='border-gold/15 mt-9 border-t pt-6'>
+                                <div className='border-hairline mt-9 border-t pt-6'>
                                     <p className='display text-sm tracking-[0.2em] text-white/45'>#WijWerkenMetNIKKI</p>
                                 </div>
                             </div>
@@ -487,10 +487,16 @@ const Page = () => {
                             een betere wijk te creëren.
                         </p>
                     </Reveal>
-                    <div className='mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6'>
-                        {partners.map((partner, index) => (
-                            <Reveal key={partner.name} delay={(index % 6) * 70}>
-                                <div className='flex aspect-[3/2] items-center justify-center bg-white p-5 transition-transform duration-300 hover:-translate-y-1'>
+                </div>
+
+                {/* doorlopende logomarquee, pauzeert bij hover */}
+                <Reveal>
+                    <div className='marquee-mask overflow-hidden pb-28'>
+                        <div className='marquee-track flex w-max gap-4'>
+                            {[...partners, ...partners].map((partner, index) => (
+                                <div
+                                    key={`${partner.name}-${index}`}
+                                    className='flex h-28 w-48 shrink-0 items-center justify-center bg-white p-6'>
                                     <Image
                                         src={partner.src}
                                         alt={partner.name}
@@ -499,10 +505,10 @@ const Page = () => {
                                         className='max-h-full w-auto object-contain'
                                     />
                                 </div>
-                            </Reveal>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </Reveal>
             </section>
 
             {/* ---------------- CTA-banner ---------------- */}
@@ -535,7 +541,7 @@ const Page = () => {
             </section>
 
             {/* ---------------- Footer ---------------- */}
-            <footer id='contact' className='border-gold/15 scroll-mt-24 border-t'>
+            <footer id='contact' className='border-hairline scroll-mt-24 border-t'>
                 <div className='mx-auto grid max-w-[1280px] gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-4 lg:px-10'>
                     <div>
                         <div className='flex items-center gap-3'>
@@ -643,7 +649,7 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className='border-gold/15 border-t'>
+                <div className='border-hairline border-t'>
                     <p className='mx-auto max-w-[1280px] px-6 py-6 text-center text-xs tracking-wide text-white/45'>
                         © 2023 Amsterdam Warriors · Work hard, play hard
                     </p>
