@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { GhostButton, GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
 import Reveal from '@/components/site/reveal';
-import SmokeBackground from '@/components/site/smoke-background';
 import { contact, links, media } from '@/lib/site';
 
 import { Calendar, Check, Clock, MapPin } from 'lucide-react';
@@ -233,7 +232,10 @@ const Page = () => {
 
             {/* Contributie */}
             <section id='contributie' className='relative scroll-mt-24 overflow-hidden'>
-                <SmokeBackground />
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                />
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Seizoen september t/m mei</p>

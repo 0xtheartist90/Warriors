@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
 import Reveal from '@/components/site/reveal';
-import SmokeBackground from '@/components/site/smoke-background';
 import { contact, links } from '@/lib/site';
 
 import { Building2, FileText, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
@@ -94,7 +93,10 @@ const Page = () => {
 
             {/* Praktische info */}
             <section className='relative overflow-hidden'>
-                <SmokeBackground />
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                />
                 <div className='relative z-10 mx-auto grid max-w-[1280px] gap-6 px-6 py-24 md:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <div className='border-hairline h-full border p-9'>
