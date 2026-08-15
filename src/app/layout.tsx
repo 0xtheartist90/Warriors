@@ -29,6 +29,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
             <body
                 className={`${geistSans.variable} ${oswald.variable} bg-navy text-foreground overscroll-none font-sans antialiased`}>
                 {children}
+                <div aria-hidden className='grain' />
             </body>
         </html>
     );
