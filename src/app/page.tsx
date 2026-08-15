@@ -138,9 +138,8 @@ const Page = () => {
                         className='anim-rise'
                     />
                     <h1 className='display anim-rise mt-8 text-[clamp(3.5rem,11vw,9rem)] text-white [animation-delay:160ms]'>
-                        <span className='block'>Work</span>
-                        <span className='block'>Hard</span>
-                        <span className='block'>
+                        <span className='block'>Work hard</span>
+                        <span className='text-outline block'>
                             Play hard <span className='text-gold'>/</span>
                         </span>
                     </h1>
