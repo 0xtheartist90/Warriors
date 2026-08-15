@@ -393,6 +393,11 @@ html.lenis body {
   user-select: none;
 }
 
+/* variant voor lichte secties */
+.bg-word-dark {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.06);
+}
+
 /* doorlopende marquees (logo's en foto's) */
 @keyframes marquee {
   to {

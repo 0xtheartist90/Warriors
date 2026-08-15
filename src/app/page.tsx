@@ -490,17 +490,17 @@ const Page = () => {
             </section>
 
             {/* ---------------- Partners ---------------- */}
-            <section id='partners' className='relative scroll-mt-24 overflow-hidden'>
-                <span aria-hidden className='bg-word'>
+            <section id='partners' className='relative scroll-mt-24 overflow-hidden bg-white'>
+                <span aria-hidden className='bg-word bg-word-dark'>
                     Partners
                 </span>
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Samenwerkingen</p>
-                        <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
+                        <h2 className='display text-navy mt-5 text-4xl lg:text-5xl'>
                             Onze <span className='text-gold'>partners</span>
                         </h2>
-                        <p className='mt-5 max-w-xl leading-relaxed text-white/70'>
+                        <p className='text-navy/60 mt-5 max-w-xl leading-relaxed'>
                             Onze organisatie werkt veel samen met de volgende partijen om zo elkaar te ondersteunen, om
                             een betere wijk te creëren.
                         </p>
@@ -510,17 +510,15 @@ const Page = () => {
                 {/* doorlopende logomarquee, pauzeert bij hover */}
                 <Reveal>
                     <div className='marquee-mask overflow-hidden pb-28'>
-                        <div className='marquee-track flex w-max gap-4'>
+                        <div className='marquee-track flex w-max items-center gap-20 px-10'>
                             {[...partners, ...partners].map((partner, index) => (
-                                <div
-                                    key={`${partner.name}-${index}`}
-                                    className='flex h-28 w-48 shrink-0 items-center justify-center bg-white p-6'>
+                                <div key={`${partner.name}-${index}`} className='flex h-24 shrink-0 items-center'>
                                     <Image
                                         src={partner.src}
                                         alt={partner.name}
                                         width={200}
                                         height={120}
-                                        className='max-h-full w-auto object-contain'
+                                        className='max-h-20 w-auto object-contain grayscale transition duration-500 hover:grayscale-0'
                                     />
                                 </div>
                             ))}
