@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { GhostButton, GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
 import Reveal from '@/components/site/reveal';
+import SmokeBackground from '@/components/site/smoke-background';
 import { contact, links, media } from '@/lib/site';
 
 import { Calendar, Check, Clock, MapPin } from 'lucide-react';
@@ -87,8 +88,14 @@ const Page = () => {
                 <section
                     key={programma.id}
                     id={programma.id}
-                    className={`scroll-mt-24 ${index % 2 === 1 ? '' : 'bg-navy-light'}`}>
-                    <div className='mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10'>
+                    className={`scroll-mt-24 ${index % 2 === 1 ? 'relative overflow-hidden' : 'bg-navy-light'}`}>
+                    {index % 2 === 1 ? (
+                        <div
+                            aria-hidden
+                            className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                        />
+                    ) : null}
+                    <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10'>
                         <Reveal className={index % 2 === 1 ? 'lg:order-2' : ''}>
                             <div className='group relative overflow-hidden'>
                                 <Image
@@ -131,8 +138,9 @@ const Page = () => {
             ))}
 
             {/* Andere sporten */}
-            <section id='andere-sporten' className='scroll-mt-24'>
-                <div className='mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
+            <section id='andere-sporten' className='relative scroll-mt-24 overflow-hidden'>
+                <SmokeBackground />
+                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Meer dan basketbal</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
