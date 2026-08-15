@@ -502,7 +502,7 @@ const Page = () => {
                 <span aria-hidden className='bg-word bg-word-dark'>
                     Partners
                 </span>
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
+                <div className='relative z-10 mx-auto max-w-[1280px] px-6 pt-24 pb-8 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Samenwerkingen</p>
                         <h2 className='display text-navy mt-5 text-4xl lg:text-5xl'>
@@ -517,7 +517,7 @@ const Page = () => {
 
                 {/* doorlopende logomarquee, pauzeert bij hover */}
                 <Reveal>
-                    <div className='marquee-mask overflow-hidden pb-28'>
+                    <div className='marquee-mask overflow-hidden pb-14'>
                         <div className='marquee-track flex w-max items-center gap-20 px-10'>
                             {[...partners, ...partners].map((partner, index) => (
                                 <div key={`${partner.name}-${index}`} className='flex h-24 shrink-0 items-center'>
