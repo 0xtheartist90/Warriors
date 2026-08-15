@@ -415,14 +415,6 @@ html.lenis body {
   will-change: transform;
 }
 
-.marquee-track-slow:hover {
-  animation-play-state: paused;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
 .marquee-mask {
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }

@@ -199,9 +199,11 @@ const Page = () => {
             </section>
 
             {/* ---------------- Over ons ---------------- */}
-            <section
-                id='over'
-                className='relative scroll-mt-24 overflow-hidden bg-[url(/images/blackbg.jpg)] bg-cover bg-center'>
+            <section id='over' className='relative scroll-mt-24 overflow-hidden'>
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                />
                 <span aria-hidden className='bg-word'>
                     Warriors
                 </span>
@@ -330,10 +332,12 @@ const Page = () => {
             </section>
 
             {/* ---------------- Nieuws / try-outs ---------------- */}
-            <section
-                id='nieuws'
-                className='scroll-mt-24 bg-[url(/images/blackbg.jpg)] bg-cover bg-center'>
-                <div className='mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
+            <section id='nieuws' className='relative scroll-mt-24 overflow-hidden'>
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                />
+                <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-28 lg:grid-cols-2 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Nieuws</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
@@ -675,7 +679,7 @@ const Page = () => {
                 </div>
                 <div className='border-hairline border-t'>
                     <p className='mx-auto max-w-[1280px] px-6 py-6 text-center text-xs tracking-wide text-white/45'>
-                        © 2023 Amsterdam Warriors · Work hard, play hard
+                        © 2026 Amsterdam Warriors · Work hard, play hard
                     </p>
                 </div>
             </footer>
