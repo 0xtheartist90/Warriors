@@ -122,6 +122,20 @@ const Page = () => {
                 </div>
             </section>
 
+            {/* Full-width sfeerbanner */}
+            <section aria-label='Warriors in actie'>
+                <Reveal>
+                    <Image
+                        src='/images/Marquee/Warriors7.jpg'
+                        alt='Warriors in actie'
+                        width={1999}
+                        height={1333}
+                        sizes='100vw'
+                        className='media-tint h-72 w-full object-cover lg:h-[28rem]'
+                    />
+                </Reveal>
+            </section>
+
             {/* Praktische info */}
             <section className='relative overflow-hidden'>
                 <div
