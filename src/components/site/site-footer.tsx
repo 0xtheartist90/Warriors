@@ -26,20 +26,38 @@ const SiteFooter = () => (
         {/* CTA-statement */}
         <div className='relative'>
             <SmokeBackground />
-            <div className='relative z-10 mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-10 px-6 pt-24 pb-16 lg:px-10'>
-            <h2 className='display max-w-3xl text-[clamp(2.75rem,7vw,5.5rem)] text-white'>
-                Klaar om mee <span className='text-outline'>te doen</span>{' '}
-                <span className='text-gold'>/</span>
-            </h2>
-                <Magnetic>
-                    <GoldButton href='/word-lid'>Word lid</GoldButton>
-                </Magnetic>
+            <div className='relative z-10 mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-12 px-6 pt-28 pb-20 lg:px-10'>
+                <div>
+                    <h2 className='display text-[clamp(3rem,8vw,6.5rem)] text-white'>
+                        <span className='block'>Klaar om</span>
+                        <span className='text-outline block'>
+                            mee te doen <span className='text-gold'>/</span>
+                        </span>
+                    </h2>
+                </div>
+                <div className='flex flex-col items-start gap-6 pb-2'>
+                    <p className='display max-w-64 text-xs leading-relaxed tracking-[0.15em] text-white/60'>
+                        Kom langs voor een gratis proefles en ervaar de Warriors-sfeer zelf.
+                    </p>
+                    <div className='flex flex-wrap items-center gap-7'>
+                        <Magnetic>
+                            <GoldButton href='/word-lid'>Word lid</GoldButton>
+                        </Magnetic>
+                        <a
+                            href={links.proefles}
+                            target='_blank'
+                            rel='noreferrer noopener'
+                            className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                            [&nbsp;&nbsp;Gratis proefles&nbsp;&nbsp;]
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
         {/* Linkkolommen */}
         <div className='border-hairline border-t'>
-            <div className='mx-auto grid max-w-[1280px] gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-10'>
+            <div className='border-hairline mx-auto grid max-w-[1280px] gap-y-12 px-6 py-16 max-lg:gap-x-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-[var(--hairline)] lg:px-10 lg:py-0 lg:[&>div]:py-16 lg:[&>div:not(:first-child)]:pl-10 lg:[&>div:not(:last-child)]:pr-10'>
                 <div>
                     <h3 className='display text-xs tracking-[0.25em] text-white/40'>Contact</h3>
                     <ul className='mt-6 space-y-3.5 text-sm text-white/65'>
@@ -116,20 +134,24 @@ const SiteFooter = () => (
             </div>
         </div>
 
-        {/* Gigantisch woordmerk */}
-        <p
-            aria-hidden
-            className='display -mb-[0.16em] text-center text-[clamp(3rem,10.5vw,10rem)] leading-none whitespace-nowrap text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.08)]'>
+        {/* Gigantisch woordmerk, licht op in goud bij hover */}
+        <Link
+            href='/'
+            aria-label='Naar boven'
+            className='display -mb-[0.16em] block text-center text-[clamp(3rem,10.5vw,10rem)] leading-none whitespace-nowrap text-transparent transition-[-webkit-text-stroke-color] duration-700 [-webkit-text-stroke:1px_rgba(255,255,255,0.08)] hover:[-webkit-text-stroke-color:rgba(239,168,45,0.45)]'>
             Amsterdam Warriors
-        </p>
+        </Link>
 
         {/* Onderste balk */}
-        <div className='border-hairline border-t'>
+        <div className='border-hairline relative border-t'>
             <div className='display mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-3 px-6 py-6 text-xs tracking-[0.15em] text-white/45 lg:px-10'>
-                <p>© 2026 Amsterdam Warriors</p>
+                <p>© 2026 Amsterdam Warriors · KVK {contact.kvk}</p>
                 <p>
                     Work hard, play hard <span className='text-gold'>/</span>
                 </p>
+                <a href='#' className='hover:text-gold text-white/60 transition-colors duration-300'>
+                    [&nbsp;&nbsp;Naar boven&nbsp;&nbsp;]
+                </a>
             </div>
         </div>
     </footer>
