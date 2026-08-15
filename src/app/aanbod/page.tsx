@@ -30,7 +30,7 @@ const programmas = [
         id: 'regio',
         stap: '12 tot 18 jaar',
         title: 'Regio',
-        image: media.girls,
+        image: '/images/warriorssfeer4.jpg',
         tekst: 'Sporten op fietsafstand, loopafstand of binnen 15 minuten met het openbaar vervoer. Twee trainingsmomenten per week in het Bijlmersportcentrum of de gymzaal van de OSB, verzorgd door Warriors-trainers. Het Regio programma biedt structuur, een veilige leeromgeving en individuele ontwikkeling, met lokale competities.',
         punten: ['Twee trainingen per week', 'Bijlmersportcentrum of OSB-gymzaal', 'Zaterdag 10:00 tot 11:00 (10-18 jaar)', 'Pickups 22+: dinsdag en donderdag 19:00 tot 20:30'],
         cta: { label: 'Proefles aanvragen', href: links.proefles, external: true }
@@ -39,7 +39,7 @@ const programmas = [
         id: 'excellence',
         stap: 'Selectie, U12 tot U22',
         title: 'Excellence',
-        image: media.proefles,
+        image: '/images/warriorssfeer.jpg',
         tekst: 'Ons selectieve programma voor getalenteerde spelers die uitkomen in de NBB competitie. Excellence vraagt begrip van trainingsintensiteit, een serieuze opleiding en teamverantwoordelijkheid. Onze filosofie: it takes a village to raise a child. We bouwen aan een professioneel netwerk van voedingsdeskundigen, docenten, coaches en scholen rond elke speler.',
         punten: ['NBB competitie, U12 tot U22', 'Besloten trainingen', 'Netwerk, ontwikkeling, structuur en community', 'Geen proefles: selectietrainingen aan het einde van elk seizoen'],
         cta: { label: 'Aanmelden selectietrainingen', href: links.tryouts, external: true }

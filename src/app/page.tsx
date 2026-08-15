@@ -200,7 +200,7 @@ const Page = () => {
                             <div className='group relative'>
                                 <div className='relative overflow-hidden'>
                                     <Image
-                                        src={media.community}
+                                        src='/images/warriorssfeer5.jpg'
                                         alt='Warriors community'
                                         width={1081}
                                         height={608}
@@ -363,7 +363,7 @@ const Page = () => {
                             <div className='group relative'>
                                 <div className='relative overflow-hidden'>
                                     <Image
-                                        src={media.nieuws}
+                                        src='/images/warriorssfeer2.jpg'
                                         alt='Warriors team'
                                         width={2048}
                                         height={1152}

@@ -125,7 +125,7 @@ const Page = () => {
                     <Reveal delay={150}>
                         <div className='group relative overflow-hidden'>
                             <Image
-                                src={media.community}
+                                src='/images/warriorssfeer3.jpg'
                                 alt='Warriors team'
                                 width={1080}
                                 height={810}
