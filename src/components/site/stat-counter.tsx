@@ -14,6 +14,7 @@ const StatCounter = ({ value, suffix = '', duration = 1600 }: { value: number; s
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             setDisplay(value);
+
             return;
         }
 
