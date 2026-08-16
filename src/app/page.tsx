@@ -133,12 +133,12 @@ const Page = () => {
                     <Image
                         src={media.logo}
                         alt='Amsterdam Warriors logo'
-                        width={140}
-                        height={112}
+                        width={200}
+                        height={160}
                         priority
                         className='anim-rise hidden [animation-delay:120ms] lg:block'
                     />
-                    <h1 className='display anim-rise mt-6 text-[clamp(3.5rem,10vw,7.5rem)] text-white [animation-delay:160ms]'>
+                    <h1 className='display anim-rise mt-5 text-[clamp(3.5rem,10vw,7.5rem)] text-white [animation-delay:160ms]'>
                         <span className='block'>Work hard</span>
                         <span className='text-outline block'>
                             Play hard <span className='text-gold'>/</span>
