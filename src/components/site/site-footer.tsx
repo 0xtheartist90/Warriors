@@ -17,6 +17,7 @@ const clubLinks = [
     { label: 'Word lid', href: '/word-lid' },
     { label: 'Over ons', href: '/over' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Webshop', href: links.webshop, external: true },
     { label: 'Gedragscode', href: links.gedragscode, external: true },
     { label: 'Beleidsplan', href: links.beleidsplan, external: true }
 ];
