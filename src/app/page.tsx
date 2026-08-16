@@ -381,47 +381,32 @@ const Page = () => {
             {/* ---------------- Warriors × Hedy Tjin ---------------- */}
             <section id='hedy-tjin' className='relative scroll-mt-24 overflow-hidden'>
                 <CollabVideo src='https://video.wixstatic.com/video/c5b4b1_6881d12ccac349b9aef0d90f288543de/1080p/mp4/file.mp4' />
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
-                    <div className='grid items-center gap-16 lg:grid-cols-[auto_1fr]'>
-                        <Reveal>
-                            <div className='relative w-56 overflow-hidden lg:w-72'>
-                                <Image
-                                    src={`${WIX}/c5b4b1_163d0bd10f364dac8d0596644f42c27d~mv2.png`}
-                                    alt='Het unieke Warriors tenue, ontworpen met Hedy Tjin'
-                                    width={576}
-                                    height={768}
-                                    sizes='(max-width: 1024px) 224px, 288px'
-                                    className='media-tint aspect-[3/4] w-full object-cover'
-                                />
-                                <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
-                            </div>
-                        </Reveal>
-                        <Reveal delay={150}>
-                            <p className='eyebrow'>Samenwerking</p>
-                            <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                                Warriors × <span className='text-gold'>Hedy Tjin /</span>
-                            </h2>
-                            <p className='mt-6 max-w-xl leading-relaxed text-white/70'>
-                                Met illustrator Hedy Tjin maakten we een unieke kledinglijn: hoodies, t-shirts en dit
-                                tenue.
-                            </p>
-                            <p className='display mt-5 text-xs tracking-[0.2em] text-white/50'>
-                                Verkrijgbaar zolang de voorraad strekt
-                            </p>
-                            <div className='mt-10 flex flex-wrap items-center gap-8'>
-                                <Magnetic>
-                                    <GoldButton href={links.webshop} external>
-                                        Naar de webshop
-                                    </GoldButton>
-                                </Magnetic>
-                                <Link
-                                    href='/over'
-                                    className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
-                                    [&nbsp;&nbsp;Het hele verhaal&nbsp;&nbsp;]
-                                </Link>
-                            </div>
-                        </Reveal>
-                    </div>
+                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-36 lg:px-10 lg:py-44'>
+                    <Reveal>
+                        <p className='eyebrow'>Samenwerking</p>
+                        <h2 className='display mt-5 text-4xl text-white lg:text-6xl'>
+                            Warriors × <span className='text-gold'>Hedy Tjin /</span>
+                        </h2>
+                        <p className='mt-6 max-w-md leading-relaxed text-white/75'>
+                            Met illustrator Hedy Tjin maakten we een unieke kledinglijn: hoodies, t-shirts en een
+                            uniek tenue.
+                        </p>
+                        <p className='display mt-5 text-xs tracking-[0.2em] text-white/55'>
+                            Verkrijgbaar zolang de voorraad strekt
+                        </p>
+                        <div className='mt-10 flex flex-wrap items-center gap-8'>
+                            <Magnetic>
+                                <GoldButton href={links.webshop} external>
+                                    Naar de webshop
+                                </GoldButton>
+                            </Magnetic>
+                            <Link
+                                href='/over'
+                                className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                                [&nbsp;&nbsp;Het hele verhaal&nbsp;&nbsp;]
+                            </Link>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
 
