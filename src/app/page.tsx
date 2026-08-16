@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CollabVideo from '@/components/site/collab-video';
 import Magnetic from '@/components/site/magnetic';
 import Parallax from '@/components/site/parallax';
 import Reveal from '@/components/site/reveal';
@@ -378,8 +379,9 @@ const Page = () => {
             </section>
 
             {/* ---------------- Warriors × Hedy Tjin ---------------- */}
-            <section id='hedy-tjin' className='scroll-mt-24'>
-                <div className='mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
+            <section id='hedy-tjin' className='relative scroll-mt-24 overflow-hidden'>
+                <CollabVideo src='https://video.wixstatic.com/video/c5b4b1_6881d12ccac349b9aef0d90f288543de/1080p/mp4/file.mp4' />
+                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
                     <div className='grid items-center gap-16 lg:grid-cols-2'>
                         <Reveal>
                             <p className='eyebrow'>Samenwerking</p>
@@ -409,36 +411,40 @@ const Page = () => {
                             </div>
                         </Reveal>
                         <Reveal delay={150}>
-                            <div className='grid grid-cols-2 gap-4'>
-                                <div className='relative row-span-2 overflow-hidden'>
-                                    <Image
-                                        src={`${WIX}/c5b4b1_163d0bd10f364dac8d0596644f42c27d~mv2.png`}
-                                        alt='Het unieke Warriors tenue, ontworpen met Hedy Tjin'
-                                        width={756}
-                                        height={1008}
-                                        sizes='(max-width: 1024px) 50vw, 300px'
-                                        className='media-tint h-full w-full object-cover'
-                                    />
-                                    <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
-                                </div>
-                                <div className='relative aspect-square overflow-hidden'>
-                                    <Image
-                                        src={`${WIX}/c5b4b1_0eac90cb33e646238f400cbc521d423a~mv2.png`}
-                                        alt='Hoodie uit de Warriors × Hedy Tjin collectie'
-                                        fill
-                                        sizes='(max-width: 1024px) 50vw, 300px'
-                                        className='media-tint object-cover'
-                                    />
-                                </div>
-                                <div className='relative aspect-square overflow-hidden'>
-                                    <Image
-                                        src={`${WIX}/c5b4b1_4d12a6d27dfd44f58514da07898885e4~mv2.png`}
-                                        alt='T-shirt uit de Warriors × Hedy Tjin collectie'
-                                        fill
-                                        sizes='(max-width: 1024px) 50vw, 300px'
-                                        className='media-tint object-cover'
-                                    />
-                                </div>
+                            <div className='grid grid-cols-3 gap-3 lg:ml-auto lg:max-w-md'>
+                                {[
+                                    {
+                                        src: `${WIX}/c5b4b1_163d0bd10f364dac8d0596644f42c27d~mv2.png`,
+                                        alt: 'Het unieke Warriors tenue, ontworpen met Hedy Tjin',
+                                        label: 'Tenue'
+                                    },
+                                    {
+                                        src: `${WIX}/c5b4b1_0eac90cb33e646238f400cbc521d423a~mv2.png`,
+                                        alt: 'Hoodie uit de Warriors × Hedy Tjin collectie',
+                                        label: 'Hoodie'
+                                    },
+                                    {
+                                        src: `${WIX}/c5b4b1_4d12a6d27dfd44f58514da07898885e4~mv2.png`,
+                                        alt: 'T-shirt uit de Warriors × Hedy Tjin collectie',
+                                        label: 'T-shirt'
+                                    }
+                                ].map((stuk) => (
+                                    <div key={stuk.label}>
+                                        <div className='relative aspect-[3/4] overflow-hidden'>
+                                            <Image
+                                                src={stuk.src}
+                                                alt={stuk.alt}
+                                                fill
+                                                sizes='(max-width: 1024px) 33vw, 150px'
+                                                className='media-tint object-cover'
+                                            />
+                                            <div aria-hidden className='bg-gold absolute top-0 left-0 h-0.5 w-full' />
+                                        </div>
+                                        <p className='display mt-3 text-xs tracking-[0.2em] text-white/60'>
+                                            {stuk.label}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </Reveal>
                     </div>
@@ -447,95 +453,22 @@ const Page = () => {
 
             {/* ---------------- Contributie ---------------- */}
             <section id='contributie' className='bg-navy-light scroll-mt-24'>
-                <div className='mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
-                    <div className='grid gap-16 lg:grid-cols-2'>
-                        <Reveal>
-                            <p className='eyebrow'>Contributie</p>
-                            <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                                Gemak met <span className='text-gold'>NIKKI</span>
-                            </h2>
-                            <p className='mt-6 leading-relaxed text-white/70'>
-                                De contributie-inning voor het seizoen 2025/2026 gaat weer van start, hiervoor werken
-                                wij samen met NIKKI. Een gezonde vereniging staat of valt met het betalen van de
-                                contributie. Alleen zo kunnen we samen blijven investeren in sport, plezier en
-                                saamhorigheid. U ontvangt binnenkort per e-mail een betaalverzoek met een
-                                iDEAL-betaallink.
-                            </p>
-                            <ul className='mt-9 space-y-4'>
-                                <li className='flex items-start gap-3'>
-                                    <span className='bg-gold text-navy mt-0.5 flex size-6 shrink-0 items-center justify-center'>
-                                        <Check className='size-4' strokeWidth={3} />
-                                    </span>
-                                    <p className='text-sm text-white/75'>
-                                        <strong className='text-white'>In één keer betalen</strong>, zonder extra
-                                        kosten
-                                    </p>
-                                </li>
-                                <li className='flex items-start gap-3'>
-                                    <span className='bg-gold text-navy mt-0.5 flex size-6 shrink-0 items-center justify-center'>
-                                        <Check className='size-4' strokeWidth={3} />
-                                    </span>
-                                    <p className='text-sm text-white/75'>
-                                        <strong className='text-white'>In termijnen betalen (per maand)</strong>,
-                                        inclusief servicekosten van 10% met een maximum van €19,- per seizoen
-                                    </p>
-                                </li>
-                            </ul>
-                            <p className='mt-7 text-sm leading-relaxed text-white/55'>
-                                Vergoeding via gemeente of instantie? Vraag deze op tijd zelf aan en informeer NIKKI
-                                via{' '}
-                                <a className='text-gold hover:underline' href='mailto:contributie@nikki.nl'>
-                                    contributie@nikki.nl
-                                </a>
-                                . Benieuwd of je in aanmerking komt? Doe de{' '}
-                                <a
-                                    className='text-gold hover:underline'
-                                    href={links.potjescheck}
-                                    target='_blank'
-                                    rel='noreferrer noopener'>
-                                    potjescheck
-                                </a>{' '}
-                                en weet het binnen 15 minuten.
-                            </p>
-                        </Reveal>
-
-                        <Reveal delay={150}>
-                            <div className='bg-navy-card border-gold self-start border-t-4 p-9'>
-                                <h3 className='display text-2xl text-white'>
-                                    Wist je <span className='text-gold'>dat...</span>
-                                </h3>
-                                <p className='mt-5 leading-relaxed text-white/70'>
-                                    Je een beroep kan doen op je{' '}
-                                    <a
-                                        className='text-gold font-semibold hover:underline'
-                                        href={links.sportfonds}
-                                        target='_blank'
-                                        rel='noreferrer noopener'>
-                                        sportfonds
-                                    </a>{' '}
-                                    of{' '}
-                                    <a
-                                        className='text-gold font-semibold hover:underline'
-                                        href={links.stadspas}
-                                        target='_blank'
-                                        rel='noreferrer noopener'>
-                                        stadspas
-                                    </a>
-                                    , en daarmee <strong className='text-white'>€300 op je contributie</strong> kan
-                                    besparen?
-                                </p>
-                                <Link
-                                    href='/aanbod#contributie'
-                                    className='display text-gold group/link mt-7 inline-flex items-center gap-2 text-sm tracking-[0.2em]'>
-                                    Bekijk alle tarieven
-                                    <ArrowRight className='size-4 transition-transform duration-300 group-hover/link:translate-x-1' />
-                                </Link>
-                                <div className='border-hairline mt-9 border-t pt-6'>
-                                    <p className='display text-sm tracking-[0.2em] text-white/45'>#WijWerkenMetNIKKI</p>
-                                </div>
-                            </div>
-                        </Reveal>
-                    </div>
+                <div className='mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-10 px-6 py-20 lg:px-10'>
+                    <Reveal>
+                        <p className='eyebrow'>Contributie</p>
+                        <h2 className='display mt-4 text-3xl text-white lg:text-4xl'>
+                            Gemak met <span className='text-gold'>NIKKI /</span>
+                        </h2>
+                        <p className='mt-4 max-w-xl text-sm leading-relaxed text-white/65'>
+                            Betaal je contributie in één keer of in termijnen via iDEAL, en bespaar tot €300 via het
+                            sportfonds of de stadspas.
+                        </p>
+                    </Reveal>
+                    <Reveal delay={120}>
+                        <Magnetic>
+                            <GoldButton href='/aanbod#contributie'>Bekijk de contributie</GoldButton>
+                        </Magnetic>
+                    </Reveal>
                 </div>
             </section>
 

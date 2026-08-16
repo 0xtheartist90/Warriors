@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { GhostButton, GoldButton } from '@/components/site/buttons';
 import Magnetic from '@/components/site/magnetic';
+import ProgramSwitcher from '@/components/site/program-switcher';
 import Reveal from '@/components/site/reveal';
 import SmokeBackground from '@/components/site/smoke-background';
 import { contact, links, media } from '@/lib/site';
@@ -83,59 +84,21 @@ const Page = () => {
                 </div>
             </section>
 
-            {/* Doorgroeipad */}
-            {programmas.map((programma, index) => (
-                <section
-                    key={programma.id}
-                    id={programma.id}
-                    className={`scroll-mt-24 ${index % 2 === 1 ? 'relative overflow-hidden' : 'bg-navy-light'}`}>
-                    {index % 2 === 1 ? (
-                        <div
-                            aria-hidden
-                            className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
-                        />
-                    ) : null}
-                    <div className='relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10'>
-                        <Reveal className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                            <div className='group relative overflow-hidden'>
-                                <Image
-                                    src={programma.image}
-                                    alt={programma.title}
-                                    width={1080}
-                                    height={720}
-                                    className='media-tint aspect-[4/3] w-full object-cover'
-                                />
-                                <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
-                            </div>
-                        </Reveal>
-                        <Reveal delay={150}>
-                            <p className='display text-xs tracking-[0.25em] text-white/50'>{programma.stap}</p>
-                            <h2 className='display mt-4 text-5xl text-white lg:text-6xl'>
-                                <span className='text-gold'>{String(index + 1).padStart(2, '0')}.</span>{' '}
-                                {programma.title}
-                            </h2>
-                            <p className='mt-6 leading-relaxed text-white/70'>{programma.tekst}</p>
-                            <ul className='border-hairline mt-9 border-t'>
-                                {programma.punten.map((punt) => (
-                                    <li
-                                        key={punt}
-                                        className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm text-white/75'>
-                                        <span className='display text-gold shrink-0'>/</span>
-                                        {punt}
-                                    </li>
-                                ))}
-                            </ul>
-                            <div className='mt-10'>
-                                <Magnetic>
-                                    <GoldButton href={programma.cta.href} external={programma.cta.external}>
-                                        {programma.cta.label}
-                                    </GoldButton>
-                                </Magnetic>
-                            </div>
-                        </Reveal>
-                    </div>
-                </section>
-            ))}
+            {/* Doorgroeipad: wissel tussen de drie programma's */}
+            <section id='programmas' className='relative scroll-mt-24 overflow-hidden'>
+                <div
+                    aria-hidden
+                    className='absolute inset-0 bg-[url(/images/blackbg.jpg)] bg-cover bg-center opacity-15'
+                />
+                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
+                    <span aria-hidden id='basketbalschool' className='absolute -top-24' />
+                    <span aria-hidden id='regio' className='absolute -top-24' />
+                    <span aria-hidden id='excellence' className='absolute -top-24' />
+                    <Reveal>
+                        <ProgramSwitcher programmas={programmas} />
+                    </Reveal>
+                </div>
+            </section>
 
             {/* Andere sporten */}
             <section id='andere-sporten' className='relative scroll-mt-24 overflow-hidden'>
@@ -252,36 +215,63 @@ const Page = () => {
             <section id='contributie' className='scroll-mt-24'>
                 <div className='mx-auto max-w-[1280px] px-6 py-24 lg:px-10'>
                     <Reveal>
-                        <p className='eyebrow'>Seizoen september t/m mei</p>
-                        <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
-                            <span className='text-gold'>Contributie</span> per programma <span className='text-gold'>/</span>
-                        </h2>
+                        <div className='flex flex-wrap items-end justify-between gap-8'>
+                            <h2 className='display text-4xl text-white lg:text-6xl'>
+                                Contributie <span className='text-outline'>per programma</span>{' '}
+                                <span className='text-gold'>/</span>
+                            </h2>
+                            <p className='display max-w-56 pb-1 text-xs leading-relaxed tracking-[0.15em] text-white/60'>
+                                Seizoen van september t/m mei. Betaling via NIKKI met iDEAL.
+                            </p>
+                        </div>
                     </Reveal>
                     <div className='mt-12 grid gap-16 lg:grid-cols-[1.2fr_1fr]'>
                         <Reveal>
-                            <div className='border-hairline border'>
+                            <div className='border-hairline border border-t-2 border-t-[var(--gold)]'>
                                 {contributie.map((rij, index) => (
                                     <div
                                         key={rij.programma}
-                                        className={`flex items-center justify-between gap-6 px-6 py-4 ${
+                                        className={`hover:bg-navy-card flex items-center justify-between gap-6 px-6 py-4.5 transition-colors duration-300 ${
                                             index !== 0 ? 'border-hairline border-t' : ''
                                         }`}>
-                                        <span className='text-sm text-white/75'>{rij.programma}</span>
+                                        <span className='display text-sm tracking-[0.08em] text-white'>
+                                            {rij.programma}
+                                        </span>
                                         <span className='display text-gold text-sm tracking-wide whitespace-nowrap'>
                                             {rij.prijs}
                                         </span>
                                     </div>
                                 ))}
                             </div>
+                            <p className='display mt-4 text-xs tracking-[0.2em] text-white/40'>#WijWerkenMetNIKKI</p>
                         </Reveal>
                         <Reveal delay={150}>
-                            <h3 className='display text-xl text-white'>Goed om te weten</h3>
-                            <ul className='mt-6 space-y-4 text-sm leading-relaxed text-white/70'>
-                                <li>
-                                    Betaling verloopt via het NIKKI-systeem: in één keer zonder extra kosten, of in
-                                    maximaal 4 termijnen met 10% servicekosten (maximaal €19 per seizoen).
+                            <h3 className='display text-2xl text-white'>
+                                Goed om te <span className='text-gold'>weten</span>
+                            </h3>
+                            <ul className='border-hairline mt-7 border-t'>
+                                <li className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm leading-relaxed text-white/70'>
+                                    <span className='display text-gold shrink-0'>/</span>
+                                    <span>
+                                    Betaling verloopt via het NIKKI-systeem: je ontvangt per e-mail een betaalverzoek
+                                    met een iDEAL-betaallink. Betaal in één keer zonder extra kosten, of in maximaal 4
+                                    termijnen met 10% servicekosten (maximaal €19 per seizoen).
+                                    </span>
                                 </li>
-                                <li>
+                                <li className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm leading-relaxed text-white/70'>
+                                    <span className='display text-gold shrink-0'>/</span>
+                                    <span>
+                                    Vergoeding via een gemeente of instantie? Vraag deze op tijd zelf aan en informeer
+                                    NIKKI via{' '}
+                                    <a className='text-gold hover:underline' href='mailto:contributie@nikki.nl'>
+                                        contributie@nikki.nl
+                                    </a>
+                                    .
+                                    </span>
+                                </li>
+                                <li className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm leading-relaxed text-white/70'>
+                                    <span className='display text-gold shrink-0'>/</span>
+                                    <span>
                                     Recht op vergoeding via je{' '}
                                     <a
                                         className='text-gold hover:underline'
@@ -307,8 +297,11 @@ const Page = () => {
                                         potjescheck
                                     </a>
                                     .
+                                    </span>
                                 </li>
-                                <li>
+                                <li className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm leading-relaxed text-white/70'>
+                                    <span className='display text-gold shrink-0'>/</span>
+                                    <span>
                                     Uitschrijven voor het volgende seizoen kan vóór 1 mei via het{' '}
                                     <a
                                         className='text-gold hover:underline'
@@ -318,10 +311,14 @@ const Page = () => {
                                         uitschrijfformulier
                                     </a>
                                     .
+                                    </span>
                                 </li>
-                                <li>
+                                <li className='border-hairline flex items-start gap-4 border-b py-3.5 text-sm leading-relaxed text-white/70'>
+                                    <span className='display text-gold shrink-0'>/</span>
+                                    <span>
                                     Trainingslocaties: {contact.locaties[0].naam} ({contact.locaties[0].adres}) en{' '}
                                     {contact.locaties[1].naam} ({contact.locaties[1].adres}).
+                                    </span>
                                 </li>
                             </ul>
                             <div className='mt-9'>
