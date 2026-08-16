@@ -382,16 +382,27 @@ const Page = () => {
             <section id='hedy-tjin' className='relative scroll-mt-24 overflow-hidden'>
                 <CollabVideo src='https://video.wixstatic.com/video/c5b4b1_6881d12ccac349b9aef0d90f288543de/1080p/mp4/file.mp4' />
                 <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
-                    <div className='grid items-center gap-16 lg:grid-cols-2'>
+                    <div className='grid items-center gap-16 lg:grid-cols-[auto_1fr]'>
                         <Reveal>
+                            <div className='relative w-56 overflow-hidden lg:w-72'>
+                                <Image
+                                    src={`${WIX}/c5b4b1_163d0bd10f364dac8d0596644f42c27d~mv2.png`}
+                                    alt='Het unieke Warriors tenue, ontworpen met Hedy Tjin'
+                                    width={576}
+                                    height={768}
+                                    sizes='(max-width: 1024px) 224px, 288px'
+                                    className='media-tint aspect-[3/4] w-full object-cover'
+                                />
+                                <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
+                            </div>
+                        </Reveal>
+                        <Reveal delay={150}>
                             <p className='eyebrow'>Samenwerking</p>
                             <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
                                 Warriors × <span className='text-gold'>Hedy Tjin /</span>
                             </h2>
-                            <p className='mt-6 leading-relaxed text-white/70'>
-                                Samen met gerenommeerd illustrator Hedy Tjin, winnaar van meerdere Zilveren Penselen en
-                                onderscheiden door de Koning, maakten we een unieke kledinglijn. Haar illustraties van
-                                Warriors-beelden werden omgezet naar hoodies, t-shirts en een meesterstuk van een
+                            <p className='mt-6 max-w-xl leading-relaxed text-white/70'>
+                                Met illustrator Hedy Tjin maakten we een unieke kledinglijn: hoodies, t-shirts en dit
                                 tenue.
                             </p>
                             <p className='display mt-5 text-xs tracking-[0.2em] text-white/50'>
@@ -408,43 +419,6 @@ const Page = () => {
                                     className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
                                     [&nbsp;&nbsp;Het hele verhaal&nbsp;&nbsp;]
                                 </Link>
-                            </div>
-                        </Reveal>
-                        <Reveal delay={150}>
-                            <div className='grid grid-cols-3 gap-3 lg:ml-auto lg:max-w-md'>
-                                {[
-                                    {
-                                        src: `${WIX}/c5b4b1_163d0bd10f364dac8d0596644f42c27d~mv2.png`,
-                                        alt: 'Het unieke Warriors tenue, ontworpen met Hedy Tjin',
-                                        label: 'Tenue'
-                                    },
-                                    {
-                                        src: `${WIX}/c5b4b1_0eac90cb33e646238f400cbc521d423a~mv2.png`,
-                                        alt: 'Hoodie uit de Warriors × Hedy Tjin collectie',
-                                        label: 'Hoodie'
-                                    },
-                                    {
-                                        src: `${WIX}/c5b4b1_4d12a6d27dfd44f58514da07898885e4~mv2.png`,
-                                        alt: 'T-shirt uit de Warriors × Hedy Tjin collectie',
-                                        label: 'T-shirt'
-                                    }
-                                ].map((stuk) => (
-                                    <div key={stuk.label}>
-                                        <div className='relative aspect-[3/4] overflow-hidden'>
-                                            <Image
-                                                src={stuk.src}
-                                                alt={stuk.alt}
-                                                fill
-                                                sizes='(max-width: 1024px) 33vw, 150px'
-                                                className='media-tint object-cover'
-                                            />
-                                            <div aria-hidden className='bg-gold absolute top-0 left-0 h-0.5 w-full' />
-                                        </div>
-                                        <p className='display mt-3 text-xs tracking-[0.2em] text-white/60'>
-                                            {stuk.label}
-                                        </p>
-                                    </div>
-                                ))}
                             </div>
                         </Reveal>
                     </div>

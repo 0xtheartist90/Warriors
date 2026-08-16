@@ -18,7 +18,7 @@ const CollabVideo = ({ src }: { src: string }) => {
                 loop
                 playsInline
             />
-            <div aria-hidden className='from-navy via-navy/80 to-navy/50 absolute inset-0 bg-gradient-to-r' />
+            <div aria-hidden className='from-navy via-navy/80 to-navy/50 absolute inset-0 bg-gradient-to-l' />
             <button
                 type='button'
                 onClick={() => setMuted((m) => !m)}
