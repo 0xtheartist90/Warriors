@@ -32,7 +32,7 @@ const SiteHeader = () => {
                 scrolled ? 'bg-navy/95' : 'bg-navy/70'
             }`}>
             <div
-                className={`mx-auto flex max-w-[1280px] items-center justify-between px-6 transition-all duration-500 lg:px-10 ${
+                className={`flex items-center justify-between px-6 transition-all duration-500 lg:px-10 ${
                     scrolled ? 'h-16' : 'h-20'
                 }`}>
                 <Link href='/' className='flex items-center gap-3'>
@@ -47,8 +47,9 @@ const SiteHeader = () => {
                         Amsterdam <span className='text-gold'>Warriors</span>
                     </span>
                 </Link>
-                <nav className='hidden items-center gap-9 lg:flex'>
-                    {navItems.map((item) => {
+                <div className='flex items-center gap-12'>
+                    <nav className='hidden items-center gap-9 lg:flex'>
+                        {navItems.map((item) => {
                         const active = pathname === item.href;
 
                         return (
@@ -66,13 +67,14 @@ const SiteHeader = () => {
                                 />
                             </Link>
                         );
-                    })}
-                </nav>
-                <Link
-                    href='/word-lid'
-                    className='display bg-gold text-navy hover:bg-gold-dark px-6 py-3 text-[13px] tracking-[0.18em] transition-colors duration-300'>
-                    Word lid
-                </Link>
+                        })}
+                    </nav>
+                    <Link
+                        href='/word-lid'
+                        className='display bg-gold text-navy hover:bg-gold-dark px-6 py-3 text-[13px] tracking-[0.18em] transition-colors duration-300'>
+                        Word lid
+                    </Link>
+                </div>
             </div>
         </header>
     );

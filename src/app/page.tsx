@@ -129,7 +129,7 @@ const Page = () => {
                 <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
 
-                <div className='relative z-10 mx-auto flex w-full max-w-[1280px] items-center justify-between gap-12 px-6 py-24 lg:px-10'>
+                <div className='relative z-10 flex w-full items-center justify-between gap-12 px-6 py-24 lg:px-10'>
                     <div>
                         <h1 className='display anim-rise text-[clamp(3.5rem,11vw,9rem)] text-white [animation-delay:160ms]'>
                             <span className='block'>Work hard</span>
