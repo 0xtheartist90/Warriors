@@ -338,8 +338,8 @@ const Page = () => {
             <section aria-label='Het Warriors team'>
                 <Reveal>
                     <Image
-                        src='/images/Marquee/Warriors5.jpg'
-                        alt='Warriors spelers met de clubbanner'
+                        src='/images/onsaanbod.jpg'
+                        alt='Het aanbod van de Warriors in beeld'
                         width={1440}
                         height={960}
                         sizes='100vw'
