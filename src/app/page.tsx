@@ -381,30 +381,39 @@ const Page = () => {
             {/* ---------------- Warriors × Hedy Tjin ---------------- */}
             <section id='hedy-tjin' className='relative scroll-mt-24 overflow-hidden'>
                 <CollabVideo src='https://video.wixstatic.com/video/c5b4b1_6881d12ccac349b9aef0d90f288543de/1080p/mp4/file.mp4' />
-                <div className='relative z-10 mx-auto max-w-[1280px] px-6 py-36 lg:px-10 lg:py-44'>
+                <div className='relative z-10 mx-auto flex min-h-[85vh] max-w-[1280px] flex-col justify-between px-6 pt-32 pb-16 lg:px-10 lg:pb-20'>
                     <Reveal>
                         <p className='eyebrow'>Samenwerking</p>
-                        <h2 className='display mt-5 text-4xl text-white lg:text-6xl'>
-                            Warriors × <span className='text-gold'>Hedy Tjin /</span>
-                        </h2>
-                        <p className='mt-6 max-w-md leading-relaxed text-white/75'>
-                            Met illustrator Hedy Tjin maakten we een unieke kledinglijn: hoodies, t-shirts en een
-                            uniek tenue.
-                        </p>
-                        <p className='display mt-5 text-xs tracking-[0.2em] text-white/55'>
-                            Verkrijgbaar zolang de voorraad strekt
-                        </p>
-                        <div className='mt-10 flex flex-wrap items-center gap-8'>
-                            <Magnetic>
-                                <GoldButton href={links.webshop} external>
-                                    Naar de webshop
-                                </GoldButton>
-                            </Magnetic>
-                            <Link
-                                href='/over'
-                                className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
-                                [&nbsp;&nbsp;Het hele verhaal&nbsp;&nbsp;]
-                            </Link>
+                    </Reveal>
+                    <Reveal>
+                        <div className='flex flex-wrap items-end justify-between gap-x-16 gap-y-10'>
+                            <div>
+                                <h2 className='display text-4xl text-white lg:text-6xl'>
+                                    <span className='block'>Warriors ×</span>
+                                    <span className='text-gold block'>Hedy Tjin /</span>
+                                </h2>
+                            </div>
+                            <div className='max-w-sm'>
+                                <p className='leading-relaxed text-white/75'>
+                                    Met illustrator Hedy Tjin maakten we een unieke kledinglijn: hoodies, t-shirts en
+                                    een uniek tenue.
+                                </p>
+                                <p className='display mt-4 text-xs tracking-[0.2em] text-white/55'>
+                                    Verkrijgbaar zolang de voorraad strekt
+                                </p>
+                                <div className='mt-8 flex flex-wrap items-center gap-8'>
+                                    <Magnetic>
+                                        <GoldButton href={links.webshop} external>
+                                            Naar de webshop
+                                        </GoldButton>
+                                    </Magnetic>
+                                    <Link
+                                        href='/over'
+                                        className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                                        [&nbsp;&nbsp;Het hele verhaal&nbsp;&nbsp;]
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </Reveal>
                 </div>
