@@ -10,6 +10,7 @@ const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Over ons', href: '/over' },
     { label: 'Aanbod', href: '/aanbod' },
+    { label: 'Shop', href: 'https://www.amsterdamwarriors.com/webshop', external: true },
     { label: 'Contact', href: '/contact' }
 ];
 
@@ -56,6 +57,7 @@ const SiteHeader = () => {
                             <Link
                                 key={item.href}
                                 href={item.href}
+                                {...(item.external ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
                                 className={`display relative text-[13px] tracking-[0.18em] transition-colors duration-300 ${
                                     active ? 'text-gold' : 'hover:text-gold text-white/75'
                                 }`}>
