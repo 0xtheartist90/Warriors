@@ -43,7 +43,8 @@ const links = {
     sportfonds: 'https://jeugdfondssportencultuur.nl/fondsen/amsterdam-sport/',
     stadspas: 'https://www.amsterdam.nl/stadspas/',
     leergeld: 'https://www.leergeldamsterdam.nl/mogelijkheden/contributie-sport',
-    potjescheck: 'https://potjescheck.geldfit.nl/'
+    potjescheck: 'https://potjescheck.geldfit.nl/',
+    webshop: 'https://www.amsterdamwarriors.com/webshop'
 };
 
 const programmas = [
@@ -373,6 +374,74 @@ const Page = () => {
                             </div>
                         </Parallax>
                     </Reveal>
+                </div>
+            </section>
+
+            {/* ---------------- Warriors × Hedy Tjin ---------------- */}
+            <section id='hedy-tjin' className='scroll-mt-24'>
+                <div className='mx-auto max-w-[1280px] px-6 py-28 lg:px-10'>
+                    <div className='grid items-center gap-16 lg:grid-cols-2'>
+                        <Reveal>
+                            <p className='eyebrow'>Samenwerking</p>
+                            <h2 className='display mt-5 text-4xl text-white lg:text-5xl'>
+                                Warriors × <span className='text-gold'>Hedy Tjin /</span>
+                            </h2>
+                            <p className='mt-6 leading-relaxed text-white/70'>
+                                Samen met gerenommeerd illustrator Hedy Tjin, winnaar van meerdere Zilveren Penselen en
+                                onderscheiden door de Koning, maakten we een unieke kledinglijn. Haar illustraties van
+                                Warriors-beelden werden omgezet naar hoodies, t-shirts en een meesterstuk van een
+                                tenue.
+                            </p>
+                            <p className='display mt-5 text-xs tracking-[0.2em] text-white/50'>
+                                Verkrijgbaar zolang de voorraad strekt
+                            </p>
+                            <div className='mt-10 flex flex-wrap items-center gap-8'>
+                                <Magnetic>
+                                    <GoldButton href={links.webshop} external>
+                                        Naar de webshop
+                                    </GoldButton>
+                                </Magnetic>
+                                <Link
+                                    href='/over'
+                                    className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                                    [&nbsp;&nbsp;Het hele verhaal&nbsp;&nbsp;]
+                                </Link>
+                            </div>
+                        </Reveal>
+                        <Reveal delay={150}>
+                            <div className='grid grid-cols-2 gap-4'>
+                                <div className='relative row-span-2 overflow-hidden'>
+                                    <Image
+                                        src={`${WIX}/c5b4b1_163d0bd10f364dac8d0596644f42c27d~mv2.png`}
+                                        alt='Het unieke Warriors tenue, ontworpen met Hedy Tjin'
+                                        width={756}
+                                        height={1008}
+                                        sizes='(max-width: 1024px) 50vw, 300px'
+                                        className='media-tint h-full w-full object-cover'
+                                    />
+                                    <div aria-hidden className='bg-gold absolute top-0 left-0 h-1 w-full' />
+                                </div>
+                                <div className='relative aspect-square overflow-hidden'>
+                                    <Image
+                                        src={`${WIX}/c5b4b1_0eac90cb33e646238f400cbc521d423a~mv2.png`}
+                                        alt='Hoodie uit de Warriors × Hedy Tjin collectie'
+                                        fill
+                                        sizes='(max-width: 1024px) 50vw, 300px'
+                                        className='media-tint object-cover'
+                                    />
+                                </div>
+                                <div className='relative aspect-square overflow-hidden'>
+                                    <Image
+                                        src={`${WIX}/c5b4b1_4d12a6d27dfd44f58514da07898885e4~mv2.png`}
+                                        alt='T-shirt uit de Warriors × Hedy Tjin collectie'
+                                        fill
+                                        sizes='(max-width: 1024px) 50vw, 300px'
+                                        className='media-tint object-cover'
+                                    />
+                                </div>
+                            </div>
+                        </Reveal>
+                    </div>
                 </div>
             </section>
 
