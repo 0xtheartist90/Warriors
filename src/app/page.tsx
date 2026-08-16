@@ -381,7 +381,7 @@ const Page = () => {
             {/* ---------------- Warriors × Hedy Tjin ---------------- */}
             <section id='hedy-tjin' className='relative scroll-mt-24 overflow-hidden'>
                 <CollabVideo src='https://video.wixstatic.com/video/c5b4b1_6881d12ccac349b9aef0d90f288543de/1080p/mp4/file.mp4' />
-                <div className='relative z-10 mx-auto flex min-h-[85vh] max-w-[1280px] flex-col justify-between gap-y-10 px-6 pt-32 pb-16 lg:px-10 lg:pb-20'>
+                <div className='relative z-10 flex min-h-[85vh] flex-col justify-between gap-y-10 px-6 pt-32 pb-16 lg:px-10 lg:pb-20'>
                     <Reveal>
                         <p className='eyebrow'>Samenwerking</p>
                         <h2 className='display mt-5 text-4xl text-white lg:text-6xl'>
