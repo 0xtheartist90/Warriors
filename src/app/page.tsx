@@ -114,7 +114,7 @@ const Page = () => {
     return (
         <main className='overflow-x-clip'>
             {/* ---------------- Hero ---------------- */}
-            <section className='relative flex min-h-svh items-center overflow-hidden pt-20'>
+            <section className='relative flex min-h-svh items-end overflow-hidden pt-20'>
                 <video
                     className='hero-video absolute inset-0 h-full w-full object-cover'
                     src={media.heroVideo}
@@ -129,33 +129,31 @@ const Page = () => {
                 <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
 
-                <div className='relative z-10 flex w-full items-center justify-between gap-12 px-6 py-24 lg:px-10'>
-                    <div>
-                        <h1 className='display anim-rise text-[clamp(3.5rem,11vw,9rem)] text-white [animation-delay:160ms]'>
-                            <span className='block'>Work hard</span>
-                            <span className='text-outline block'>
-                                Play hard <span className='text-gold'>/</span>
-                            </span>
-                        </h1>
-                        <div className='anim-rise mt-12 flex flex-wrap items-center gap-8 [animation-delay:420ms]'>
-                            <Magnetic>
-                                <GoldButton href='/word-lid'>Word lid</GoldButton>
-                            </Magnetic>
-                            <Link
-                                href='/aanbod'
-                                className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
-                                [&nbsp;&nbsp;Ons aanbod&nbsp;&nbsp;]
-                            </Link>
-                        </div>
-                    </div>
+                <div className='relative z-10 w-full px-6 pt-8 pb-24 lg:px-10'>
                     <Image
                         src={media.logo}
                         alt='Amsterdam Warriors logo'
-                        width={300}
-                        height={240}
+                        width={140}
+                        height={112}
                         priority
-                        className='anim-rise hidden shrink-0 [animation-delay:300ms] lg:block'
+                        className='anim-rise hidden [animation-delay:120ms] lg:block'
                     />
+                    <h1 className='display anim-rise mt-6 text-[clamp(3.5rem,10vw,7.5rem)] text-white [animation-delay:160ms]'>
+                        <span className='block'>Work hard</span>
+                        <span className='text-outline block'>
+                            Play hard <span className='text-gold'>/</span>
+                        </span>
+                    </h1>
+                    <div className='anim-rise mt-10 flex flex-wrap items-center gap-8 [animation-delay:420ms]'>
+                        <Magnetic>
+                            <GoldButton href='/word-lid'>Word lid</GoldButton>
+                        </Magnetic>
+                        <Link
+                            href='/aanbod'
+                            className='display hover:text-gold text-sm tracking-[0.25em] text-white transition-colors duration-300'>
+                            [&nbsp;&nbsp;Ons aanbod&nbsp;&nbsp;]
+                        </Link>
+                    </div>
                 </div>
 
                 {/* micro-labels in de hoeken */}
