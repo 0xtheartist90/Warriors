@@ -419,21 +419,28 @@ const Page = () => {
 
             {/* ---------------- Contributie ---------------- */}
             <section id='contributie' className='bg-navy-light scroll-mt-24'>
-                <div className='mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-10 px-6 py-20 lg:px-10'>
+                <div className='mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-x-16 gap-y-10 px-6 py-24 lg:px-10'>
                     <Reveal>
                         <p className='eyebrow'>Contributie</p>
-                        <h2 className='display mt-4 text-3xl text-white lg:text-4xl'>
-                            Gemak met <span className='text-gold'>NIKKI /</span>
+                        <h2 className='display mt-5 text-4xl text-white lg:text-6xl'>
+                            <span className='block'>Wat kost</span>
+                            <span className='text-outline block'>
+                                meedoen? <span className='text-gold'>/</span>
+                            </span>
                         </h2>
-                        <p className='mt-4 max-w-xl text-sm leading-relaxed text-white/65'>
-                            Betaal je contributie in één keer of in termijnen via iDEAL, en bespaar tot €300 via het
-                            sportfonds of de stadspas.
-                        </p>
                     </Reveal>
                     <Reveal delay={120}>
-                        <Magnetic>
-                            <GoldButton href='/aanbod#contributie'>Bekijk de contributie</GoldButton>
-                        </Magnetic>
+                        <div className='max-w-sm'>
+                            <p className='leading-relaxed text-white/70'>
+                                Elk programma heeft z'n eigen tarief. Betaal in één keer of in termijnen, en bespaar
+                                tot €300 via het sportfonds of de stadspas.
+                            </p>
+                            <div className='mt-8'>
+                                <Magnetic>
+                                    <GoldButton href='/aanbod#contributie'>Bekijk alle prijzen</GoldButton>
+                                </Magnetic>
+                            </div>
+                        </div>
                     </Reveal>
                 </div>
             </section>
