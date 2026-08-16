@@ -30,6 +30,21 @@ const reis = [
     }
 ];
 
+/* Productfoto's van de Warriors × Hedy Tjin collectie, uit de originele galerij */
+const WIX = 'https://static.wixstatic.com/media';
+const hedyGallerij = [
+    'c5b4b1_163d0bd10f364dac8d0596644f42c27d',
+    'c5b4b1_b124d4d876ed4ef2b9542903f69a6a11',
+    'c5b4b1_0eac90cb33e646238f400cbc521d423a',
+    'c5b4b1_4d12a6d27dfd44f58514da07898885e4',
+    'c5b4b1_fd1911da6eb64c0a83acad282fccce16',
+    'c5b4b1_8dfcb613b95345409395c98dc2519070',
+    'c5b4b1_f5b4dbc13ec841b397efc8244d0358a5',
+    'c5b4b1_e9a3bb4b19d543e3b394419a6a63c948',
+    'c5b4b1_acc6291a06e4485e9f7898ea76a7160c',
+    'c5b4b1_3dd0db0eed494101a2ace6bb0b36ffc2'
+].map((id) => `${WIX}/${id}~mv2.png`);
+
 const vacatureGroepen = [
     { groep: 'Bestuur', functies: 'Voorzitter · Secretaris · Penningmeester · Boekhouder' },
     {
@@ -128,10 +143,21 @@ const Page = () => {
                         </h2>
                         <p className='mt-6 leading-relaxed text-white/70'>
                             It takes a village to raise a child. Vanuit dat motto werken we samen met partners aan
-                            bijzondere projecten. Zo ontwierpen we met Hedy Tjin, gerenommeerd illustrator en beeldend
-                            kunstenaar (winnaar van meerdere Zilveren Penselen en onderscheiden door Koning
-                            Willem-Alexander), een kledinglijn gebaseerd op illustraties van Warriors-beelden: hoodies,
-                            t-shirts en een uniek tenue. Verkrijgbaar zolang de voorraad strekt.
+                            bijzondere projecten. Hedy Tjin is gerenommeerd illustrator en beeldend kunstenaar: ze won
+                            meerdere Zilveren Penselen voor de kinderboeken die ze illustreerde, werd onderscheiden
+                            door Koning Willem-Alexander en staat bekend om haar muurschilderingen door het hele land.
+                            Via haar muurschildering in de Amsterdamse Poort kwam ze bij de Warriors op de radar, en
+                            al snel bleek het een match.
+                        </p>
+                        <p className='mt-4 leading-relaxed text-white/70'>
+                            Na onderzoek naar wat de Warriors doen en waar we voor staan, nam Hedy inspiratie uit
+                            beelden en foto's van onze kanalen en zette die om naar haar illustratiestijl. Onze
+                            creatieve ontwerper vertaalde de illustraties vervolgens naar hoodies, t-shirts en een
+                            meesterstuk van een uniek tenue. Een uitdagend proces waar we uitermate trots op zijn, en
+                            wellicht krijgt het nog een mooi vervolg.
+                        </p>
+                        <p className='display mt-5 text-xs tracking-[0.2em] text-white/50'>
+                            Verkrijgbaar zolang de voorraad strekt
                         </p>
                         <div className='mt-10 flex flex-wrap gap-4'>
                             <Magnetic>
@@ -142,6 +168,28 @@ const Page = () => {
                             <GhostButton href={links.hedytjin} external>
                                 Over Hedy Tjin
                             </GhostButton>
+                        </div>
+                    </Reveal>
+                </div>
+
+                {/* De collectie in beeld: doorlopende fotostrook */}
+                <div className='relative z-10 pb-24'>
+                    <Reveal>
+                        <div className='marquee-mask overflow-hidden'>
+                            <div className='marquee-track-slow flex w-max gap-4'>
+                                {[...hedyGallerij, ...hedyGallerij].map((foto, index) => (
+                                    <div key={`${foto}-${index}`} className='relative h-56 shrink-0 overflow-hidden lg:h-72'>
+                                        <Image
+                                            src={foto}
+                                            alt='Warriors × Hedy Tjin collectie'
+                                            width={420}
+                                            height={288}
+                                            sizes='420px'
+                                            className='media-tint h-full w-auto object-cover'
+                                        />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </Reveal>
                 </div>
