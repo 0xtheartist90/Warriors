@@ -126,7 +126,7 @@ const Page = () => {
                 />
                 <div className='bg-navy/70 absolute inset-0' />
                 {/* vignet: donkere randen voor cinematische focus op het midden */}
-                <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(6,6,6,0.85)_100%)]' />
+                <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(12,19,34,0.85)_100%)]' />
                 <div className='from-navy absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent' />
 
                 <div className='relative z-10 w-full px-6 pt-8 pb-24 lg:px-10'>

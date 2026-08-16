@@ -205,9 +205,9 @@
 :root,
 .dark {
   /* volledig zwart, goud alleen als accent */
-  --navy: #060606;
-  --navy-light: #0b0b0b;
-  --navy-card: #101010;
+  --navy: #0c1322;
+  --navy-light: #111a2e;
+  --navy-card: #17233d;
   --gold: #efa82d;
   --gold-dark: #d9931f;
   --hairline: rgba(255, 255, 255, 0.08);
@@ -219,13 +219,13 @@
   --popover: var(--navy-card);
   --popover-foreground: #f2f2f0;
   --primary: var(--gold);
-  --primary-foreground: #060606;
+  --primary-foreground: #0c1322;
   --secondary: var(--navy-light);
   --secondary-foreground: #f2f2f0;
   --muted: #161616;
   --muted-foreground: #9a9a94;
   --accent: var(--gold);
-  --accent-foreground: #060606;
+  --accent-foreground: #0c1322;
   --border: var(--hairline);
   --input: rgba(255, 255, 255, 0.12);
   --ring: var(--gold);
